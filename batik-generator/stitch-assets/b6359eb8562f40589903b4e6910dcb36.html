@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BatikGen Workspace</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8B5E3C",
+                        "primary-light": "#D4B996",
+                        "gold": "#C5A059",
+                        "brown-dark": "#3E2723",
+                        "glass-border": "rgba(255, 255, 255, 0.15)",
+                        "glass-bg": "rgba(255, 255, 255, 0.05)",
+                        "glass-bg-strong": "rgba(20, 10, 5, 0.6)",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    backgroundImage: {
+                        'batik-pattern': "url('https://images.unsplash.com/photo-1628135805844-3c6596131494?q=80&w=2070&auto=format&fit=crop')", 
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+            }
+            .glass-dark {
+                @apply bg-black/20 backdrop-blur-md border border-white/10 shadow-xl;
+            }
+            .glass-panel {
+                @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 shadow-lg;
+            }
+            .glass-panel-dark {
+                @apply bg-gradient-to-br from-[#2a1d18]/70 to-[#1a100d]/70 backdrop-blur-xl border border-gold/20 shadow-lg;
+            }
+            .glass-input {
+                @apply bg-white/5 border border-white/10 text-white placeholder-white/40 backdrop-blur-sm focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all;
+            }
+            .text-gold-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F4E2B8] to-[#C5A059];
+            }
+        }
+        body {
+            background-color: #1a100d;
+        }
+    </style>
+</head>
+<body class="bg-[#1a100d] text-slate-100 font-display antialiased selection:bg-gold/30 h-screen flex flex-col overflow-hidden relative">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-batik-pattern bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-[#2c1810] via-[#1a100d] to-[#0f0806] opacity-90"></div>
+<div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+<header class="h-16 border-b border-white/10 glass-panel-dark flex items-center justify-between px-6 shrink-0 z-20 relative">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-gradient-to-br from-gold to-primary flex items-center justify-center text-[#2a1d18] shadow-lg shadow-gold/20">
+<span class="material-symbols-outlined font-bold">texture</span>
+</div>
+<h1 class="text-xl font-serif font-bold tracking-tight text-gold-gradient">Nusa<span class="text-white/80 font-normal font-display">Batik</span></h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-white/90 hover:text-gold transition-colors" href="#">Gallery</a>
+<a class="text-sm font-medium text-white/50 hover:text-white transition-colors" href="#">History</a>
+<a class="text-sm font-medium text-white/50 hover:text-white transition-colors" href="#">Settings</a>
+</nav>
+<div class="h-6 w-px bg-white/10"></div>
+<button class="size-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors text-white/70 hover:text-gold">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div aria-label="User profile avatar" class="size-9 rounded-full bg-gradient-to-br from-gold to-primary cursor-pointer shadow-lg ring-2 ring-white/10" role="img">
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden z-10 relative">
+<aside class="w-80 md:w-96 flex flex-col border-r border-white/5 glass-panel-dark overflow-y-auto shrink-0 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+<div class="p-6 pb-2 border-b border-white/5">
+<h2 class="text-xl font-serif font-bold mb-1 text-white">Studio Config</h2>
+<p class="text-sm text-white/40">Craft your masterpiece.</p>
+</div>
+<div class="p-6 space-y-8">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold uppercase tracking-widest text-gold/80">Input Source</label>
+<span class="material-symbols-outlined text-white/40 text-lg cursor-help hover:text-gold transition-colors" title="Upload a clear front-facing photo">info</span>
+</div>
+<div class="group relative flex flex-col items-center justify-center w-full h-48 border border-dashed border-white/20 bg-white/5 rounded-2xl hover:border-gold/50 hover:bg-white/10 transition-all cursor-pointer backdrop-blur-sm">
+<div class="flex flex-col items-center justify-center pt-5 pb-6 text-center px-4">
+<div class="size-12 rounded-full bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl text-white/60 group-hover:text-gold transition-colors">cloud_upload</span>
+</div>
+<p class="mb-1 text-sm text-white/90 font-medium">Click to upload face</p>
+<p class="text-xs text-white/40">SVG, PNG, JPG (MAX. 800px)</p>
+</div>
+</div>
+<button class="w-full py-2.5 px-4 rounded-xl border border-white/10 bg-white/5 text-sm font-medium text-white/80 hover:bg-white/10 hover:border-gold/30 hover:text-gold transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+                    Use Webcam
+                </button>
+</div>
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-gold/80">Subject Gender</label>
+<div class="grid grid-cols-2 gap-3 p-1.5 bg-black/20 rounded-xl border border-white/5 backdrop-blur-sm">
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-sm font-medium bg-gradient-to-r from-gold/90 to-primary/90 text-[#2a1d18] shadow-lg shadow-gold/10 transition-all">
+<span class="material-symbols-outlined text-lg">male</span>
+                        Male
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-lg">female</span>
+                        Female
+                    </button>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-gold/80">Batik Style Region</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-white/40 group-focus-within:text-gold transition-colors">search</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-3 rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/30 focus:border-gold/50 focus:ring-1 focus:ring-gold/50 sm:text-sm backdrop-blur-md transition-all shadow-inner" placeholder="Search province..." type="text" value="Central Java (Solo)"/>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center cursor-pointer">
+<span class="material-symbols-outlined text-white/40 hover:text-white">expand_more</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gold/10 text-gold border border-gold/20 cursor-pointer hover:bg-gold/20 transition-colors backdrop-blur-sm">
+                        Solo
+                    </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-white/60 border border-white/10 cursor-pointer hover:bg-white/10 transition-colors backdrop-blur-sm">
+                        Yogyakarta
+                    </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-white/60 border border-white/10 cursor-pointer hover:bg-white/10 transition-colors backdrop-blur-sm">
+                        Pekalongan
+                    </span>
+</div>
+</div>
+<div class="pt-2 border-t border-white/10">
+<button class="flex items-center justify-between w-full py-2 text-sm font-medium text-white/50 hover:text-gold transition-colors">
+<span>Advanced Settings</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="mt-auto p-6 border-t border-white/10 bg-black/20 backdrop-blur-xl sticky bottom-0 z-10">
+<button class="w-full bg-gradient-to-r from-gold to-[#a67c38] hover:to-[#8c672d] text-[#2a1d18] font-bold py-4 px-4 rounded-xl shadow-lg shadow-gold/10 transition-all active:scale-[0.98] flex items-center justify-center gap-2 border border-white/20 relative overflow-hidden group">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+<span class="material-symbols-outlined relative z-10">auto_awesome</span>
+<span class="relative z-10">Generate Batik</span>
+</button>
+<p class="text-center text-[10px] text-white/30 mt-3 uppercase tracking-wider">2 credits per generation</p>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full relative overflow-hidden">
+<div class="px-8 py-6 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-serif text-white/90">Generated Results</h2>
+<span class="px-3 py-1 rounded-full bg-white/10 border border-white/5 text-xs font-bold text-gold backdrop-blur-md">12</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-black/20 backdrop-blur-md rounded-lg p-1 border border-white/10">
+<button class="p-1.5 rounded text-white/40 hover:text-gold hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+</button>
+<button class="p-1.5 rounded text-white bg-white/10 shadow-sm border border-white/5">
+<span class="material-symbols-outlined text-xl">view_comfy</span>
+</button>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white/70 bg-black/20 border border-white/10 rounded-lg hover:bg-white/5 hover:text-white hover:border-white/20 transition-all backdrop-blur-md">
+<span class="material-symbols-outlined text-lg">sort</span>
+                    Newest First
+                </button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-8 pb-8 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+<div class="mb-8 p-1 rounded-2xl bg-gradient-to-r from-gold/20 to-transparent animate-pulse">
+<div class="p-4 bg-black/40 backdrop-blur-md rounded-xl flex items-center gap-4 border border-gold/20">
+<div class="size-12 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+<span class="material-symbols-outlined animate-spin">refresh</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-gold">Processing your request...</p>
+<p class="text-xs text-white/50">Weaving digital threads for 'Central Java' style.</p>
+</div>
+<div class="w-32 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-gold w-2/3 rounded-full shadow-[0_0_10px_rgba(197,160,89,0.5)]"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group relative rounded-2xl overflow-hidden glass-panel-dark hover:shadow-gold/10 hover:border-gold/30 transition-all duration-500">
+<div class="aspect-[3/4] w-full overflow-hidden bg-white/5 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Portrait of a man wearing traditional brown batik shirt from Solo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEGcBgxd0g44uRpj45iyKBAyD2qqmnX9bN23r9hymFTPKT_sbIzSbZmQaFvlyRGgUhwAr8BapcREm6ugUUZkFPpVaED1D9rPCRtNlCvNadImJTHB-kc8TY-JtvfKjxMy35NgMYw5crSgZNxAf9DVNfA-LbZu4dKqkqRQsIh3vgT-IChaGqydjmON1hMH8GUJISk_842lSakYinStp_WlFonyz5N41uPMAnPpYi6l8Uu_iDl_U_ZE74lvMAFEqz1IC9JafPdAMX8wA');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+<div class="flex items-center gap-3 justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-gold uppercase tracking-wider border border-gold/20 shadow-lg">Solo Style</span>
+</div>
+<div class="p-4 border-t border-white/5 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-white/90 group-hover:text-gold transition-colors">Modern Fit Batik</p>
+<p class="text-xs text-white/40 mt-0.5">Generated 2m ago</p>
+</div>
+<button class="text-white/30 hover:text-gold transition-colors" title="Regenerate similar">
+<span class="material-symbols-outlined text-xl">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden glass-panel-dark hover:shadow-gold/10 hover:border-gold/30 transition-all duration-500">
+<div class="aspect-[3/4] w-full overflow-hidden bg-white/5 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Portrait of a man wearing intricate patterned batik shirt, dark lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVjpAdSy6KS6PfzDwnyDOONRcPcHetfGoc0QjdHcTejy95lAQRsAqptNqxiIymDhXiX_BiBn7dCXdh_grOmJYa4m7onjRDo0UojYraXENeP9bRMP-uQhijojerJ6Af12bkgfq3ilsq7m0ASadUKz-Nfutlqsst391deMNYxiVtEmuyD1Wc-bByARZntwEu18boMva0RTW7wiDJ2TjGejrpwHLlPNtCFCj-zOFfk17zfFw8AmH1QulubDOUtYBb12moN0DXolegp7k');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+<div class="flex items-center gap-3 justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-gold uppercase tracking-wider border border-gold/20 shadow-lg">Yogyakarta</span>
+</div>
+<div class="p-4 border-t border-white/5 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-white/90 group-hover:text-gold transition-colors">Classic Kraton</p>
+<p class="text-xs text-white/40 mt-0.5">Generated 5m ago</p>
+</div>
+<button class="text-white/30 hover:text-gold transition-colors">
+<span class="material-symbols-outlined text-xl">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden glass-panel-dark hover:shadow-gold/10 hover:border-gold/30 transition-all duration-500">
+<div class="aspect-[3/4] w-full overflow-hidden bg-white/5 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Portrait of a smiling man in casual batik shirt outdoors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzfuWmsMnf0oizCAxR3aWpg5granzlSP3vgk2c9CUtZGKqmk-HjvJ5604NU0TVqkXi8vW4_AdgZy3_65PlzIJqfvAI20f5ixUdc2gu6glszf-ycMGO78rhuOAUO1gzK-JK2D2Xhz3YbWp0Ffni0NIbN_3QO9mJSF35pA0DpcsCL-HcHybcH0cxo2deuaNCUBEWSNhw4E9aRHXUyiSA5C_uAeENzPH9tesRfluHO_J_4GMxWv4qCUfx0NcHMudvtgKhtecrnmonU3o');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+<div class="flex items-center gap-3 justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-gold uppercase tracking-wider border border-gold/20 shadow-lg">Pekalongan</span>
+</div>
+<div class="p-4 border-t border-white/5 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-white/90 group-hover:text-gold transition-colors">Coastal Flora</p>
+<p class="text-xs text-white/40 mt-0.5">Generated 12m ago</p>
+</div>
+<button class="text-white/30 hover:text-gold transition-colors">
+<span class="material-symbols-outlined text-xl">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden glass-panel-dark hover:shadow-gold/10 hover:border-gold/30 transition-all duration-500">
+<div class="aspect-[3/4] w-full overflow-hidden bg-white/5 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Portrait of a man in dark formal batik attire" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiHvmu3qMHV3-gRa16wy_Rjhws1S4I3tJFfGxWxyBqG1ynKclRq0tes7r37OIXmT3JTua6bVh1UTHYumNlEoCx8Rnc5d-YL_89hhPAO-0NdJqBEuF8VrywvAjnHe-ccpOu0zt-k0U7HPQfh2QNYl_k_-EEBO3UWY6xE5l23b6eF-PokS3qGCeIxRia5XD5U6_nL5RZLsUbfink1f1OdeqjzdsVdedJcoDNS8CK-4_l_e6lqhhI6drphGKLKuvyB3Qnq631d5g4b5Q');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+<div class="flex items-center gap-3 justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="size-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md hover:bg-gold hover:text-[#2a1d18] hover:border-gold text-white transition-all flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-gold uppercase tracking-wider border border-gold/20 shadow-lg">West Java</span>
+</div>
+<div class="p-4 border-t border-white/5 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-white/90 group-hover:text-gold transition-colors">Megamendung</p>
+<p class="text-xs text-white/40 mt-0.5">Generated 24m ago</p>
+</div>
+<button class="text-white/30 hover:text-gold transition-colors">
+<span class="material-symbols-outlined text-xl">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="text-sm font-medium text-white/60 hover:text-gold transition-colors flex items-center gap-2 px-6 py-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined">expand_more</span>
+                    Load More Results
+                </button>
+</div>
+</div>
+<div class="absolute bottom-6 right-6 max-w-sm w-full bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-2xl shadow-2xl p-4 flex items-center gap-4 transform translate-y-20 opacity-0 transition-all duration-500" style="animation: slide-up 0.5s forwards 1s;">
+<div class="size-8 rounded-full bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center shrink-0 shadow-lg ring-1 ring-white/20">
+<span class="material-symbols-outlined text-white text-lg font-bold">check</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-white tracking-wide">Generation Complete</h4>
+<p class="text-xs text-white/70 mt-0.5">Your batch of 'Solo Style' portraits is ready.</p>
+</div>
+<button class="text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<style>
+            @keyframes slide-up {
+                to { transform: translateY(0); opacity: 1; }
+            }
+        </style>
+</main>
+</div>
+
+</body></html>

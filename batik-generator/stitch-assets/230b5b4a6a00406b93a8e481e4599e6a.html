@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nusantara Glass Face Capture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8B5A2B","primary-hover": "#A06B35",
+                        "accent": "#D4A373",
+                        "nusantara-dark": "#2D1B12",
+                        "nusantara-brown": "#4E342E",
+                        "glass-border": "rgba(255, 255, 255, 0.2)",
+                        "glass-bg": "rgba(45, 27, 18, 0.7)",
+                        "glass-shine": "rgba(255, 255, 255, 0.05)",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px" },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #1a0f0a;background-image: 
+                radial-gradient(at 0% 0%, rgba(139, 90, 43, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(212, 163, 115, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(78, 52, 46, 0.2) 0px, transparent 50%);
+            background-attachment: fixed;
+        }.glass-panel {
+            background: rgba(45, 27, 18, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        .glass-button {
+            background: linear-gradient(135deg, rgba(139, 90, 43, 0.4), rgba(78, 52, 46, 0.4));
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-button:hover {
+            background: linear-gradient(135deg, rgba(139, 90, 43, 0.6), rgba(78, 52, 46, 0.6));
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .glass-frame {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1.5rem;
+            padding: 12px;
+            box-shadow: 
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.05),
+                0 20px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+        }.face-overlay-guide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 240px;
+            height: 320px;
+            border: 1px solid rgba(212, 163, 115, 0.3);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 10;
+        }
+        .corner-accent {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: #D4A373;opacity: 0.8;
+            filter: drop-shadow(0 0 4px rgba(212, 163, 115, 0.5));
+        }@keyframes scan {
+            0% { top: 10%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 90%; opacity: 0; }
+        }
+        .scan-line {
+            position: absolute;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: #D4A373;
+            box-shadow: 0 0 10px #D4A373, 0 0 20px #D4A373;
+            animation: scan 3s infinite ease-in-out;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body class="font-display antialiased text-slate-100 min-h-screen flex flex-col">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary/20 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-nusantara-brown/40 blur-[120px] pointer-events-none"></div>
+<div class="flex justify-end p-6 z-50">
+<button class="glass-button flex h-10 w-10 items-center justify-center rounded-full text-white/80 hover:text-white transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="layout-container flex h-full grow flex-col items-center justify-center pb-12 z-10">
+<div class="layout-content-container flex flex-col w-full max-w-[680px] px-4 sm:px-6">
+<div class="flex flex-col gap-2 mb-8 text-center">
+<h1 class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#efe6dd] to-[#D4A373] tracking-tight text-4xl font-bold leading-tight drop-shadow-sm">
+                        Nusantara Face Capture
+                    </h1>
+<p class="text-white/60 text-sm font-medium tracking-wide">
+                        Align your face within the glass frame. We'll generate a Batik design tailored to your aura.
+                    </p>
+</div>
+<div class="glass-frame mb-8">
+<div class="relative w-full aspect-[4/3] bg-black/80 rounded-2xl overflow-hidden shadow-inner">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-90 transition-opacity duration-700" data-alt="Live camera feed showing a person's face ready for capture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_IgxwOghC6biiJVsF-8jtFJd25iKpitEXoit2ObTvQc-bzuUD4CsR5O7cwe1_EOukR8FE70BfLcFsjfKywWPdjscjDZtQih7kwWD6S0lWgBoiVlwHtDaUBkLgQ2FBKvkpnkZOkX101dunC2aMNPV-cInX9SXU003iV8ShFvS5HQbafoxBOzCpT1ZNIh5xzncSqWR5Lc7NySkCrnAPO9igsXqtniAPgJl72_A5ZTQ-jvTW_8T5moI0YPYlRD9FNHz5e2IOWaAKIR4"); mix-blend-mode: luminosity;'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40"></div>
+<div class="face-overlay-guide">
+<div class="corner-accent top-0 left-0 border-t-[3px] border-l-[3px] rounded-tl-2xl -mt-2 -ml-2"></div>
+<div class="corner-accent top-0 right-0 border-t-[3px] border-r-[3px] rounded-tr-2xl -mt-2 -mr-2"></div>
+<div class="corner-accent bottom-0 left-0 border-b-[3px] border-l-[3px] rounded-bl-2xl -mb-2 -ml-2"></div>
+<div class="corner-accent bottom-0 right-0 border-b-[3px] border-r-[3px] rounded-br-2xl -mb-2 -mr-2"></div>
+</div>
+<div class="scan-line top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px]"></div>
+<div class="absolute top-4 left-4 flex items-center gap-2 glass-panel !bg-black/40 !border-white/5 px-3 py-1.5 rounded-full">
+<div class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)] animate-pulse"></div>
+<span class="text-xs font-medium text-white/90 tracking-wide">Ready</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 w-full max-w-[520px] mx-auto relative z-20">
+<div class="flex justify-center items-center">
+<button class="relative group cursor-pointer transition-all duration-300 transform hover:scale-105">
+<div class="absolute -inset-4 bg-primary/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute inset-0 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(0,0,0,0.2)]"></div>
+<div class="relative m-2 h-16 w-16 rounded-full bg-gradient-to-br from-[#A06B35] to-[#5D4037] border border-white/20 shadow-lg flex items-center justify-center overflow-hidden group-active:scale-95 transition-transform">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+<span class="material-symbols-outlined text-white text-3xl drop-shadow-md relative z-10">photo_camera</span>
+</div>
+</button>
+</div>
+<div class="flex gap-4 justify-center w-full pt-6 border-t border-white/10 mt-2">
+<button class="glass-button flex flex-1 items-center justify-center gap-2 h-12 px-6 rounded-xl text-white/90 text-sm font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[20px] text-accent">refresh</span>
+<span>Retake</span>
+</button>
+<button class="glass-button flex flex-1 items-center justify-center gap-2 h-12 px-6 rounded-xl text-white text-sm font-semibold tracking-wide !bg-gradient-to-r !from-primary/60 !to-primary/80 hover:!from-primary/80 hover:!to-primary !border-primary/50">
+<span class="material-symbols-outlined text-[20px]">check</span>
+<span>Use Photo</span>
+</button>
+</div>
+<div class="flex items-center justify-center gap-1.5 mt-2 opacity-60">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<p class="text-xs font-normal text-center tracking-wide">
+                            Processed locally on device
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

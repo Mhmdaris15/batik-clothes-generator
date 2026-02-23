@@ -1,0 +1,26 @@
+{
+  "project": {
+    "title": "Face Capture Interface",
+    "id": "3486560825429994938"
+  },
+  "screens": [
+    {
+      "title": "Batik Generator Landing Page",
+      "id": "0782493c8355495eb8976b3cc719c248",
+      "html": "stitch-assets/0782493c8355495eb8976b3cc719c248.html",
+      "image": "stitch-assets/0782493c8355495eb8976b3cc719c248.png"
+    },
+    {
+      "title": "Face Capture Interface",
+      "id": "230b5b4a6a00406b93a8e481e4599e6a",
+      "html": "stitch-assets/230b5b4a6a00406b93a8e481e4599e6a.html",
+      "image": "stitch-assets/230b5b4a6a00406b93a8e481e4599e6a.png"
+    },
+    {
+      "title": "Image Generation Workspace",
+      "id": "b6359eb8562f40589903b4e6910dcb36",
+      "html": "stitch-assets/b6359eb8562f40589903b4e6910dcb36.html",
+      "image": "stitch-assets/b6359eb8562f40589903b4e6910dcb36.png"
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BatikGen - AI Batik Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8B5A2B","primary-hover": "#6F4518",
+                        "secondary": "#CD853F","gold": "#D4AF37",
+                        "cream": "#F5F0E6","background-light": "#FDFBF7",
+                        "background-dark": "#2C241B","surface-glass": "rgba(255, 255, 255, 0.1)",
+                        "surface-glass-dark": "rgba(44, 36, 27, 0.4)",
+                        "border-glass": "rgba(212, 175, 55, 0.3)",},
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'batik-pattern': "url('https://www.transparenttextures.com/patterns/batik-1.png')",
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .glass-card {
+            @apply backdrop-blur-md bg-white/20 dark:bg-black/20 border border-border-glass shadow-lg shadow-primary/5;
+        }
+        .glass-button {
+            @apply backdrop-blur-sm bg-primary/90 text-white border border-gold/30 hover:bg-primary shadow-lg shadow-primary/20;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-cream font-body antialiased selection:bg-primary selection:text-white relative">
+<div class="fixed inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none bg-batik-pattern bg-repeat"></div>
+<div class="relative z-10 flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-gold/20 bg-white/70 dark:bg-[#2C241B]/70 backdrop-blur-xl px-6 py-4 lg:px-10">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-cream shadow-md shadow-primary/30">
+<span class="material-symbols-outlined text-2xl">texture</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-primary dark:text-gold font-display">BatikGen</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-gold text-sm font-medium transition-colors" href="#">Features</a>
+<a class="text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-gold text-sm font-medium transition-colors" href="#">Gallery</a>
+<a class="text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-gold text-sm font-medium transition-colors" href="#">Pricing</a>
+</div>
+<div class="flex gap-3">
+<button class="hidden sm:flex h-10 items-center justify-center rounded-lg px-4 text-sm font-bold text-primary dark:text-cream hover:bg-primary/5 dark:hover:bg-white/5 transition-colors">
+                Log In
+            </button>
+<button class="flex h-10 items-center justify-center rounded-lg glass-button px-5 text-sm font-bold transition-all transform hover:scale-105">
+                Get Started
+            </button>
+</div>
+</header>
+<main class="flex-1 flex flex-col">
+<section class="relative px-6 py-12 md:py-20 lg:px-20 overflow-hidden">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 h-[500px] w-[500px] rounded-full bg-secondary/20 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 h-[400px] w-[400px] rounded-full bg-primary/10 blur-[100px] pointer-events-none"></div>
+<div class="mx-auto max-w-7xl relative z-10">
+<div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+<div class="flex flex-col gap-6 text-left">
+<div class="inline-flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-gold/10 backdrop-blur-sm px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary dark:text-gold">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>AI-Powered Tradition</span>
+</div>
+<h1 class="text-4xl font-black leading-tight tracking-tight text-[#4E342E] dark:text-cream md:text-5xl lg:text-6xl font-display">
+                            Reimagine Yourself in <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-gold">Nusantara Batik</span>
+</h1>
+<p class="text-lg font-normal leading-relaxed text-slate-700 dark:text-cream/70 max-w-xl">
+                            Upload your photo, choose a regional style like Kawung or Parang, and let our AI tailor a masterpiece in warm Sogan tones. Experience the warmth of Indonesian heritage.
+                        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex h-12 items-center justify-center rounded-lg bg-gradient-to-r from-primary to-secondary px-8 text-base font-bold text-white shadow-lg shadow-primary/30 hover:opacity-90 transition-all border border-white/20">
+                                Create My Portrait
+                            </button>
+<button class="flex h-12 items-center justify-center rounded-lg border border-primary/30 bg-white/30 dark:bg-black/30 backdrop-blur-md px-6 text-base font-medium text-primary dark:text-cream hover:bg-white/50 dark:hover:bg-white/10 transition-all gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+                                View Gallery
+                            </button>
+</div>
+<div class="flex items-center gap-4 pt-4 text-sm text-slate-600 dark:text-cream/60">
+<div class="flex -space-x-3">
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-background-dark bg-gray-300 bg-cover bg-center" data-alt="User avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCg1hxhHC4nOoE2Gh6VscA52W5Jdx7zSG_utNllel1wKM1q-2Zoh6NRQlUSaUDKjAHwTBUnsCn2dSXhWjHj1AQfB5VdNWlD8smCuB13zIOPfmbneXnVm2J9Ix1OSSc5zhjxPet37GXXWO7pUCVq2vVJL6pMtx09roEc68IJGw8SixX1XimsZUVP9v8lRpFlQYyswQAN9xvO6wVioPL0UO-jiQF8CTzKoXoNEErbKzE2MGvbgHwJ5uzKq6_jXY7sEb7lRlbmPwx_ucA');"></div>
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-background-dark bg-gray-300 bg-cover bg-center" data-alt="User avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDygl_bL0FmdejUBATb9eKQ1JFUcIxdCpmtkXtcvsIvghk2bqbejDEY__4y4crcvPuok5wwgdJ1IUTqlNUj-30C3w2SPySzykW0pj0uOXtmxzLoeCvpT3VNYVk-cc39OdYOnHt7dCpp5txhWSPtJGjk26WGzoEe-Gm6KKZPyqcWWsKWn90sLB9ZuG3dE70D19deGHlR-UuK0ISFdff-57pbdTOSxkLZTm0Y8zdKNb1zOgDtEKQeB9Mfu0MdV-Wg7PORDZ3CWGiQt5U');"></div>
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-background-dark bg-gray-300 bg-cover bg-center" data-alt="User avatar 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAA_EnPW2DjKZjxdvucxsnbE2rRrKHbFvRrurpGxrdDRtEyBpaOQnIvK6F1zEN1NQ6WudgigE_0OpU7zGP_QN5YuVUmD08XShZhaQbU5yQ-NieMdQIM5Wxf-EaUFmS7ptnpXBhZ54KdUF3YjJhzhxrd7zIJcG4JNWeELo_tSVPTTd6F9kC2C6ZILQ9nwzz6Rgpj7crTENJ_vlC7B9A4221ju60ypDbRdAdd4IkxpFxWgJqfeG0YRTQRliej5AVeeB8oVegSWVLzIlE');"></div>
+</div>
+<p>Loved by 2,000+ culture enthusiasts</p>
+</div>
+</div>
+<div class="relative w-full max-w-[600px] lg:ml-auto">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl border-4 border-white/30 dark:border-white/5 glass-card p-2">
+<div class="w-full h-full relative rounded-xl overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Woman wearing intricate traditional Batik dress with golden accents" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9MYxKAhdkjMDb9u_CWPjhmIThiZQPbh5WiST-yTgIGEMvnYcEUlsdBj4VmL3_IcmIWSRTnwlvNJNBemZXJkeWcJeRvGLWv0BfkXXtZ1FyuJLs-GxSh5MkPHEB4oV1-P8AMqG9aXfi6uPps6m4n5rYUaO8NsjFyffpBQnct0dL0VlyisvZ0NpWkAjeJU1d8CX3a-Jg9c-uaDfI-C1tkgJ8B1ymsbwCFR6ccs_nJZUVKAODtQkv4elZvAQhyodbkp-lvk-HtlsqOTg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent mix-blend-multiply"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center justify-between rounded-xl bg-white/20 dark:bg-black/40 p-3 backdrop-blur-md border border-white/20 shadow-lg">
+<div class="flex flex-col">
+<span class="text-xs text-cream/80 uppercase tracking-wider font-semibold">Style</span>
+<span class="font-bold text-white font-display">Royal Solo</span>
+</div>
+<div class="h-8 w-[1px] bg-white/20"></div>
+<div class="flex flex-col">
+<span class="text-xs text-cream/80 uppercase tracking-wider font-semibold">Pattern</span>
+<span class="font-bold text-white font-display">Parang Rusak</span>
+</div>
+<button class="h-8 w-8 rounded-full bg-gold/90 flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -top-8 -right-8 h-28 w-28 rounded-xl glass-card p-2 animate-bounce duration-[3000ms]">
+<div class="h-full w-full rounded-lg bg-cover bg-center shadow-inner" data-alt="Close up of Batik fabric pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjaRhME8E_DNMX0Ug9uWLGiPYLTEkkn9BKmo2i1h3Wn0I7g0h-F5KwocHkYxj5juBnb8cD3z4u7iIM9ecpkIK8Wwnx65KOiX11kZCbaL4DXRi4D45Ie3I6pSVUpc0MPgyx2_hkBK-UIUty0tKEbKGE67RO6lJEJU0g5OqczVA7grYFeU6pIZLEOFHpELKyBpkme1h_du5PhfJSeK6sdi8SGdRlaPxGg3IGcvdAmhWeh4rpk4ms5isie42dCKalPw-QDBBdNgm1-EU');"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative px-6 py-20 lg:px-20">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none"></div>
+<div class="mx-auto max-w-7xl relative z-10">
+<div class="mb-16 flex flex-col gap-4 text-center">
+<h2 class="text-3xl font-black tracking-tight text-[#4E342E] dark:text-cream md:text-4xl font-display">
+                        How It Works
+                    </h2>
+<p class="mx-auto max-w-2xl text-lg text-slate-600 dark:text-cream/70">
+                        Create your personalized Batik portrait in just three simple steps using our advanced generative AI.
+                    </p>
+</div>
+<div class="grid gap-8 md:grid-cols-3">
+<div class="group glass-card relative flex flex-col items-center rounded-2xl p-8 text-center transition-all hover:-translate-y-2 hover:shadow-primary/10">
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white/40 dark:bg-white/10 text-primary border border-white/20 shadow-inner backdrop-blur-md group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">center_focus_strong</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-slate-800 dark:text-cream font-display">Face Capture</h3>
+<p class="text-slate-600 dark:text-cream/70">
+                            Upload a clear photo. We analyze your facial structure for a realistic and perfect fit using advanced AI models.
+                        </p>
+<div class="absolute -right-4 top-1/2 hidden h-8 w-8 -translate-y-1/2 transform text-gold/50 md:block">
+<span class="material-symbols-outlined text-2xl">arrow_forward_ios</span>
+</div>
+</div>
+<div class="group glass-card relative flex flex-col items-center rounded-2xl p-8 text-center transition-all hover:-translate-y-2 hover:shadow-primary/10">
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white/40 dark:bg-white/10 text-primary border border-white/20 shadow-inner backdrop-blur-md group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">palette</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-slate-800 dark:text-cream font-display">Style Selection</h3>
+<p class="text-slate-600 dark:text-cream/70">
+                            Choose from authentic regional styles like Mega Mendung (Cirebon), Kawung (Yogyakarta), or Parang.
+                        </p>
+<div class="absolute -right-4 top-1/2 hidden h-8 w-8 -translate-y-1/2 transform text-gold/50 md:block">
+<span class="material-symbols-outlined text-2xl">arrow_forward_ios</span>
+</div>
+</div>
+<div class="group glass-card relative flex flex-col items-center rounded-2xl p-8 text-center transition-all hover:-translate-y-2 hover:shadow-primary/10">
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white/40 dark:bg-white/10 text-primary border border-white/20 shadow-inner backdrop-blur-md group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-slate-800 dark:text-cream font-display">Generate &amp; Download</h3>
+<p class="text-slate-600 dark:text-cream/70">
+                            Watch the magic happen. Get high-resolution, print-ready portraits instantly to share or frame.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-20 lg:px-20 bg-primary/5 dark:bg-black/20 backdrop-blur-sm">
+<div class="mx-auto max-w-7xl">
+<div class="mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+<div class="max-w-2xl">
+<h2 class="text-3xl font-black tracking-tight text-[#4E342E] dark:text-cream md:text-4xl font-display">
+                            Latest Creations
+                        </h2>
+<p class="mt-4 text-lg text-slate-600 dark:text-cream/70">
+                            Explore the diversity of Indonesian heritage through our community gallery.
+                        </p>
+</div>
+<a class="flex items-center gap-2 text-primary hover:text-secondary font-bold transition-colors" href="#">
+                        View All Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<div class="group relative overflow-hidden rounded-xl border border-gold/20 shadow-lg aspect-[3/4]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Portrait of a woman in blue Mega Mendung batik" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_BilL-4zgCyE-Usc75ctpx5HFM53cyHcGuTMH1NbaqpJH7dOdXg5DXMs3YDESEMYaBLiD6C_lkyMp6aIiViIFj3Ia5HrdMH3kf1eNaNEShCKdkWBfmVmiU9VbwE-CD2GT4ui7F_GC8WUojkrfLDBniZgZLauvBJXJw90QurDuWmo_dIAiiBdBFUHdY63vQUPm9VZghxe7K6VPUFMNtPHlkOQ8gxlABMlzblakL6Yu20xj1Omvr4dzjdYIFE3jXM9tHyiHRPZ5GWc');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<p class="text-sm font-semibold text-white font-display">Mega Mendung</p>
+<p class="text-xs text-gold">Cirebon Style</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-gold/20 shadow-lg aspect-[3/4]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Man wearing brown Kawung batik shirt" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYIfuF9J0GP5GhDXvvTunWFFIg6DZ0r6K7V6mh8QfHCHMX-bsdtP_riZrRWkt-MqUKOLZIj369Yd4ZJLwpQp4lMTe5Fg7ZOR4RnSU0MvkFAtSfJbUpQztaZa3ATJfgtAmfn47LunEYPYqKdahMaZAZ-kkzvFzSvzdjxRCrAV53EkgD9qmQo0rfPs5nT7IfwyiuojYU0TuGfJ4OftDy2rZRyctfCS0400lRgYYFGXH5v-LsfNrC_rL_FmbsBx7uILGiRBtPIGM_DlQ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<p class="text-sm font-semibold text-white font-display">Kawung</p>
+<p class="text-xs text-gold">Yogyakarta Style</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-gold/20 shadow-lg aspect-[3/4]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Woman in elegant Parang batik dress" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBznKePwvmK5BsaKAflKbfQEIgocpJQOECIivOw3HYgytDz6_cTcaYoi4y5-b9ijVmgUn4q_eCOTyIurbB9Ox5N9G1h1tUuzwMPsZeUbe4ZHQKxGmB7aPbfJGqg7eiERDKMH1cCVSlUj6-DtmUtUv6AAzaUHIIF0_IoPXNnriLBM7mVaA2QSOvArz8oFiSdS1QTqGyq3IR7twyhWRaayA51Ns_dAgPJs--u89QUGQGXETMPxfrXH-M7Xr-nG0Wz-gUXAEvDHSpwM4');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<p class="text-sm font-semibold text-white font-display">Parang Barong</p>
+<p class="text-xs text-gold">Royal Court Style</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-gold/20 shadow-lg aspect-[3/4]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Portrait of a young woman in modern batik fusion fashion" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_7cEUbNuLXkxyiVKikHPV5_zOS4Y0JWaeUb24fQHM8pGRXy9njVj1ehWrnXPAveR2ZpOse9mbJcZXl8cKTnJNNllIm4O_lR-9b6zzBplgW8PhcDJbnAb_IPxn3P8wt2auRpiiOfZbDRQsT0a1xT_kUOiHaB2VN1D-aj3S_NnXbA-F3R0Z5CFMqgBTNKL0RY8U8chS1NUOSfR-Uev7gKIiUgGODFdTjRGLQmgAQAQJ_78q0l-lX3ajgMFcVjxqPnIWKG3qwQi9JYY');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<p class="text-sm font-semibold text-white font-display">Batik Kontemporer</p>
+<p class="text-xs text-gold">Modern Fusion</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-20 lg:px-20">
+<div class="mx-auto max-w-5xl rounded-3xl bg-gradient-to-br from-[#5D4037] to-[#3E2723] px-6 py-16 text-center md:px-12 relative overflow-hidden shadow-2xl border border-gold/20">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/batik-1.png')] bg-repeat mix-blend-overlay"></div>
+<div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-20 -right-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="mb-6 text-3xl font-black text-cream md:text-5xl font-display">Ready to Wear Your Heritage?</h2>
+<p class="mx-auto mb-10 max-w-2xl text-lg text-cream/80">
+                        Join thousands of users creating stunning, culturally rich portraits. Start generating your Batik collection today.
+                    </p>
+<button class="inline-flex h-12 items-center justify-center rounded-lg bg-cream px-8 text-base font-bold text-[#5D4037] hover:bg-white transition-colors shadow-lg shadow-black/20">
+                        Get Started for Free
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-gold/20 bg-white/50 dark:bg-[#1E1915]/50 backdrop-blur-lg px-6 py-12 lg:px-20 relative z-10">
+<div class="mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded bg-primary text-cream shadow-sm">
+<span class="material-symbols-outlined text-xl">texture</span>
+</div>
+<span class="text-lg font-bold text-[#4E342E] dark:text-cream font-display">BatikGen</span>
+</div>
+<div class="flex gap-8 text-sm font-medium text-slate-600 dark:text-cream/60">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<p class="text-sm text-slate-500 dark:text-cream/40">
+                © 2023 BatikGen Inc. All rights reserved.
+            </p>
+</div>
+</footer>
+</div>
+
+</body></html>

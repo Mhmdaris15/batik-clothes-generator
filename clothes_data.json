@@ -1,0 +1,333 @@
+{
+  "regions": [
+    {
+      "id": "jawa_tengah",
+      "name": "Jawa Tengah",
+      "description": "Central Java",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_jawa",
+            "name": "Kebaya Jawa",
+            "description": "Traditional Javanese kebaya blouse with batik jarik skirt wrap. Deep indigo and brown batik parang motif. Elegant fitted lace-trimmed kebaya in soft cream or pastel colors paired with a batik kain jarik wrapped around the waist. Accessorized with golden jewelry, sanggul hair bun, and selendang scarf.",
+            "motifs": ["Parang", "Sido Mukti", "Kawung", "Truntum"],
+            "colors": ["Cream white", "Soft yellow", "Pastel green", "Dusty pink"],
+            "accessories": "gold jewelry, sanggul bun, selendang scarf, kebaya shoes"
+          },
+          {
+            "id": "kebaya_kartini",
+            "name": "Kebaya Kartini",
+            "description": "Elegant kebaya inspired by Raden Ajeng Kartini, a Javanese national heroine. Long-sleeved fitted lace kebaya in white or soft colors paired with batik jarik wrap skirt. Adorned with gold brooches and jasmine flower hair accessories.",
+            "motifs": ["Truntum", "Sidomukti", "Wahyu Tumurun"],
+            "colors": ["White", "Ivory", "Light blue", "Soft lavender"],
+            "accessories": "gold brooches, jasmine hair accessories, gold necklace, kebaya heels"
+          }
+        ],
+        "male": [
+          {
+            "id": "beskap_jawa",
+            "name": "Beskap Jawa",
+            "description": "Traditional Javanese formal male attire. A fitted collarless jacket (beskap) in dark fabric with batik kain jarik wrap around the waist. Worn with blangkon batik headwrap, keris dagger tucked at the back. Rich brown and dark blue tones with Sido Mukti batik motif.",
+            "motifs": ["Sido Mukti", "Parang Rusak", "Kawung", "Lereng"],
+            "colors": ["Dark brown", "Navy blue", "Black", "Deep indigo"],
+            "accessories": "blangkon headwrap, keris dagger, batik sash, traditional sandals"
+          },
+          {
+            "id": "surjan_lurik",
+            "name": "Surjan Lurik",
+            "description": "Traditional Javanese male shirt made from lurik woven fabric. Collarless button-front shirt in striped lurik pattern paired with batik jarik sarong. Modest and elegant traditional daily wear from Central Java.",
+            "motifs": ["Lurik stripes", "Parang", "Kawung"],
+            "colors": ["Brown stripes", "Blue stripes", "Green stripes"],
+            "accessories": "blangkon, batik jarik, traditional sandals"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jawa_barat",
+      "name": "Jawa Barat",
+      "description": "West Java – Sundanese",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_sunda",
+            "name": "Kebaya Sunda",
+            "description": "Sundanese kebaya from West Java, known for vibrant colors. Bright and colorful fitted kebaya paired with batik Sunda or kain lilit wrap. Features rich embroidery and bright floral details. Often in bright green, orange, or red colors with intricate Sunda floral batik motifs.",
+            "motifs": ["Mega Mendung", "Lereng Sunda", "Buketan"],
+            "colors": ["Bright green", "Orange", "Red", "Purple"],
+            "accessories": "siger crown, flower hairpiece, gold jewelry, selendang"
+          },
+          {
+            "id": "baju_kebaya_pangsi",
+            "name": "Kebaya Pangsi Sunda",
+            "description": "Traditional Sundanese female outfit featuring a colorful kebaya with pangsi-style kain wrap. Known for its bright, cheerful colors and intricate embroidery representing Sundanese artistic culture.",
+            "motifs": ["Mega Mendung", "Parang Sunda", "Rereng"],
+            "colors": ["Turquoise", "Fuchsia", "Golden yellow"],
+            "accessories": "siger crown headpiece, gold necklace, flower ornaments"
+          }
+        ],
+        "male": [
+          {
+            "id": "pangsi_sunda",
+            "name": "Pangsi Sunda",
+            "description": "Traditional Sundanese male outfit consisting of a plain white or light-colored shirt tucked into black or dark-colored loose pants (pangsi), with a sarong wrapped around the waist. Completed with iket kepala head cloth tied in traditional style.",
+            "motifs": ["Plain", "Simple batik border"],
+            "colors": ["White shirt", "Black pants", "Batik sarong in earth tones"],
+            "accessories": "iket kepala head cloth, batik sarong, sandal tarumpah"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bali",
+      "name": "Bali",
+      "description": "Balinese traditional attire",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_bali",
+            "name": "Kebaya Bali",
+            "description": "Elegant Balinese lace kebaya in vibrant colors paired with kain endek or songket woven fabric. The outfit includes a colorful sash (selendang) tied around the waist. The kebaya is often white, pink, or bright-colored with golden accessories. Women wear flower ornaments in their hair.",
+            "motifs": ["Endek woven", "Songket gold threads", "Prada golden pattern"],
+            "colors": ["White", "Pink", "Yellow", "Light green", "Purple"],
+            "accessories": "golden flower hairpiece, gold jewelry, colorful selendang sash, traditional sandals"
+          },
+          {
+            "id": "payas_agung",
+            "name": "Payas Agung Bali",
+            "description": "The most formal and elaborate Balinese female ceremonial dress. Features gold-threaded songket cloth wrapped around the body, an ornate golden crown (gelungan), elaborate gold jewelry, and a long golden sash. The entire outfit shimmers with gold and jewel tones.",
+            "motifs": ["Songket gold brocade", "Prada gold leaf"],
+            "colors": ["Gold", "Red", "Deep purple", "Black"],
+            "accessories": "elaborate golden gelungan crown, full gold jewelry set, gold-trimmed accessories"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_bali",
+            "name": "Pakaian Adat Bali Pria",
+            "description": "Traditional Balinese male ceremonial attire: white shirt (kemeja putih), udeng headband tied formally, kain kampuh or saput batik-endek draped over the waist, and a kancut fabric tuck at front. A golden sash is tied around the waist. Dignified and elegant ceremonial look.",
+            "motifs": ["Endek woven", "Poleng checkered black-white", "Songket"],
+            "colors": ["White top", "Gold sash", "Endek in earth tones or bright colors"],
+            "accessories": "udeng headband, kris dagger, golden sash, traditional sandals"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sumatera_utara",
+      "name": "Sumatera Utara",
+      "description": "North Sumatra – Batak",
+      "clothes": {
+        "female": [
+          {
+            "id": "ulos_batak_wanita",
+            "name": "Pakaian Adat Batak Wanita",
+            "description": "Traditional Batak female attire featuring the sacred ulos woven textile draped over the shoulder or wrapped around the body. Rich red, black, and white geometric patterns on hand-woven ulos cloth. Paired with a matching woven skirt wrap. Gold and silver jewelry complete the ceremonial look.",
+            "motifs": ["Ulos Ragihotang", "Ulos Sibolang", "Ulos Ragi Idup geometric"],
+            "colors": ["Deep red", "Black", "White", "Gold thread accent"],
+            "accessories": "gold headpiece, silver and gold jewelry, ulos draped over shoulder"
+          }
+        ],
+        "male": [
+          {
+            "id": "ulos_batak_pria",
+            "name": "Pakaian Adat Batak Pria",
+            "description": "Traditional Batak male ceremonial attire with ulos textile wrapped and draped across the body. Features a mandarin collar shirt with ulos cloth draped over the shoulder and wrapped at the waist. Bold geometric red, black, and white patterns on woven ulos fabric. Dignified ceremonial appearance.",
+            "motifs": ["Ulos Ragi Hotang", "Ulos Bintang Maratur geometric"],
+            "colors": ["Red", "Black", "White with gold threads"],
+            "accessories": "gold headpiece or songkok hat, gold jewelry, ulos drape"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sumatera_barat",
+      "name": "Sumatera Barat",
+      "description": "West Sumatra – Minangkabau",
+      "clothes": {
+        "female": [
+          {
+            "id": "bundo_kanduang",
+            "name": "Bundo Kanduang",
+            "description": "The iconic and regal Minangkabau female traditional dress. Features a distinctive large wing-shaped gold headpiece (tengkuluk tanduk or suntiang), a dark silk brocade jacket with gold trimming, embroidered sarong with songket gold threads, and a colorful long shawl. The suntiang crown is the most distinctive element, towering over the head like buffalo horns.",
+            "motifs": ["Songket gold brocade", "Minang floral", "Geometric Minang"],
+            "colors": ["Black", "Deep red", "Gold", "Dark green"],
+            "accessories": "large suntiang gold crown, full gold jewelry set, songket wrap, embroidered shawl"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_taluak_balango",
+            "name": "Baju Taluak Balango Minang",
+            "description": "Traditional Minangkabau male formal attire. Consists of a long-sleeved embroidered jacket (baju taluak balango) with gold thread embroidery on black fabric, baggy pants (sarawa), a songket verse cloth draped at the waist, and a traditional destar or tanjak headwrap. Elegant and dignified appearance.",
+            "motifs": ["Gold embroidery on black", "Songket brocade"],
+            "colors": ["Black with gold", "Dark red", "Deep purple"],
+            "accessories": "tanjak or destar headwrap, songket sash, traditional keris, gold embroidered accessories"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sulawesi_selatan",
+      "name": "Sulawesi Selatan",
+      "description": "South Sulawesi – Bugis/Makassar",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_bodo",
+            "name": "Baju Bodo Bugis",
+            "description": "The ancient and elegant Bugis/Makassar traditional female dress. A short, wide, and sheer square-cut blouse in shimmering silk fabric, worn over a sarong. The translucent colorful silk (organza) top in bright colors like red, orange, green, or purple creates a flowing, ethereal look. Adorned with elaborate gold jewelry.",
+            "motifs": ["Plain sheer silk", "Loti woven sarong"],
+            "colors": ["Bright red", "Vibrant orange", "Purple", "Green", "Yellow – color indicates age/status"],
+            "accessories": "gold crown and hair ornaments, full gold jewelry, lipa sabbe silk sarong"
+          }
+        ],
+        "male": [
+          {
+            "id": "jas_tutu_bugis",
+            "name": "Jas Tutu / Baju Bella Bugis",
+            "description": "Traditional Bugis male formal attire featuring a fitted jacket with golden buttons over a white inner shirt, paired with a silk sarong wrapped at the waist. A distinctive turban-like headwrap (passapu) completes the look. Rich silk fabric in dark or deep colors with golden accents.",
+            "motifs": ["Silk plain", "Lipa sabbe silk weave"],
+            "colors": ["Dark blue", "Black", "Deep purple with gold accents"],
+            "accessories": "passapu headwrap, gold accessories, lipa sabbe silk sarong, traditional keris"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kalimantan",
+      "name": "Kalimantan",
+      "description": "Borneo – Dayak traditional",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_dayak_wanita",
+            "name": "Pakaian Adat Dayak Wanita",
+            "description": "Vibrant and ornate Dayak female traditional costume from Borneo. Features a colorful beaded top decorated with intricate bead patterns, a fringed skirt with colorful beadwork, and a cone-shaped hat (sugu tinggi) adorned with feathers. The costume is rich in symbolic tribal motifs and natural materials. Feather decorations on hair and accessories.",
+            "motifs": ["Dayak tribal geometric", "Animal motifs", "Tree of life pattern"],
+            "colors": ["Red", "Yellow", "Black with colorful beadwork"],
+            "accessories": "sugu tinggi feathered hat, beaded necklaces and bracelets, feather decorations"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_dayak_pria",
+            "name": "Pakaian Adat Dayak Pria",
+            "description": "Bold and striking Dayak male warrior traditional costume from Borneo. Features a vest or open top adorned with beadwork and feathers, a short loincloth-style wrap with fringe, arm and leg bands, and an elaborate feathered headdress. Tribal tattoo-inspired painted patterns on exposed skin. Carries traditional mandau sword.",
+            "motifs": ["Dayak tribal", "Hornbill feather motifs", "Warrior patterns"],
+            "colors": ["Black", "Red", "Yellow with elaborate featherwork"],
+            "accessories": "elaborate feathered headdress with hornbill feathers, mandau sword, beaded accessories, arm bands"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dki_jakarta",
+      "name": "DKI Jakarta",
+      "description": "Jakarta – Betawi",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_encim_betawi",
+            "name": "Kebaya Encim Betawi",
+            "description": "Elegant Betawi Peranakan Chinese-influenced kebaya from Jakarta. Features a colorful embroidered short kebaya with floral embroidery in a Peranakan style, paired with a batik skirt. Vibrant colors like pink, green, and blue. The embroidery is distinctive with floral and butterfly motifs. Also known as kebaya nyonya.",
+            "motifs": ["Floral embroidery", "Butterfly", "Rose"],
+            "colors": ["Pink", "Light green", "Sky blue", "Lavender", "Yellow"],
+            "accessories": "floral hair accessories, gold brooches, peranakan porcelain-bead accessories"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_sadariah_betawi",
+            "name": "Baju Sadariah Betawi",
+            "description": "Traditional Betawi male attire from Jakarta. Features a plain white or bright-colored long-sleeved mandarin collar shirt (sadariah) paired with batik sarong and a songkok/peci hat. A simple but dignified traditional look representing Jakarta's multicultural heritage.",
+            "motifs": ["Plain", "Batik sarong motifs"],
+            "colors": ["White", "Light blue", "Cream"],
+            "accessories": "songkok/peci black cap, batik sarong, sandal selop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nusa_tenggara_timur",
+      "name": "Nusa Tenggara Timur",
+      "description": "East Nusa Tenggara",
+      "clothes": {
+        "female": [
+          {
+            "id": "tenun_ikat_ntt_wanita",
+            "name": "Tenun Ikat NTT Wanita",
+            "description": "Beautiful handwoven ikat textile dress from East Nusa Tenggara (NTT). Features a wrap-around handwoven ikat cloth with bold geometric and natural motifs in earthy tones. The intricate ikat weaving process creates unique patterns symbolizing local beliefs and nature. Often worn as a full wrap dress or blouse with matching wrap skirt.",
+            "motifs": ["Geometric tribal", "Crocodile motif", "Horse motif", "Patola diamond"],
+            "colors": ["Rust red", "Indigo blue", "Earthy brown", "Natural white"],
+            "accessories": "beaded necklaces, silver jewelry, traditional hair combs"
+          }
+        ],
+        "male": [
+          {
+            "id": "tenun_ikat_ntt_pria",
+            "name": "Tenun Ikat NTT Pria",
+            "description": "Traditional male attire from East Nusa Tenggara featuring handwoven ikat cloth. A woven ikat shawl (selimut) draped over the shoulder and a woven wrap cloth (sarong) around the waist. Bold geometric patterns in earthy, natural dye colors. Often includes a distinctive woven headband.",
+            "motifs": ["Tribal geometric", "Animal totems", "Ancestor spirit motifs"],
+            "colors": ["Dark indigo", "Rust", "Earthy tones", "Natural undyed threads"],
+            "accessories": "iket woven headband, silver or brass accessories, carved wooden or bone ornaments"
+          }
+        ]
+      }
+    },
+    {
+      "id": "maluku",
+      "name": "Maluku",
+      "description": "Maluku – Spice Islands",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_cele_wanita",
+            "name": "Baju Cele Wanita",
+            "description": "The iconic traditional female dress from Maluku. Features a striking red and white striped patterned baju cele blouse paired with a tapis woven cloth skirt. Often includes a ruffled white collar. The bold red and white stripes are the hallmark of Malukan traditional dress, representing courage and purity.",
+            "motifs": ["Tenum tapis woven", "Cele stripe pattern", "Flora and fauna"],
+            "colors": ["Red and white stripes", "Gold accents"],
+            "accessories": "konde hair bun with golden pins, sanggul, golden jewelry set"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_cele_pria",
+            "name": "Pakaian Adat Maluku Pria",
+            "description": "Traditional Maluku male ceremonial dress. Features a white shirt with red collar and trim details, a red cloth wrap at the waist, and a topi tiga negeri hat. Dignified and proud appearance representing the Malukan heritage from the historic Spice Islands.",
+            "motifs": ["Stripe accent", "Simple tapis weave"],
+            "colors": ["White", "Red", "Gold trim"],
+            "accessories": "topi tiga negeri hat, ceremonial sword/parang salawaku, traditional jewelry"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aceh",
+      "name": "Aceh",
+      "description": "Aceh – The Veranda of Mecca",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_aceh_wanita",
+            "name": "Pakaian Adat Aceh Wanita",
+            "description": "Elegant and modest traditional female dress from Aceh. Features an embroidered long-sleeved blouse (baju meukasah) with intricate gold thread Aceh border embroidery (tekat), paired with a long wrapped skirt with matching gold embroidery borders. A woven silk songket shawl is draped over the head and shoulders modestly.",
+            "motifs": ["Aceh geometric gold embroidery", "Pinto Aceh pattern", "Floral gold tekat"],
+            "colors": ["Black with gold", "Purple with gold", "Green with gold", "Red with gold"],
+            "accessories": "elaborate golden crown (kopiah meukeutop), gold jewelry, gold tekat embroidered accessories"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_aceh_pria",
+            "name": "Pakaian Adat Aceh Pria",
+            "description": "Dignified traditional male attire from Aceh. Features a black or dark-colored long-sleeved embroidered jacket with gold Aceh-style embroidery borders, paired with matching pants and a rencong dagger at the waist. A kupiah meukeutop hat adorned with gold embroidery sits on the head. Represents Acehnese Islamic and royal heritage.",
+            "motifs": ["Aceh gold embroidery", "Geometric border patterns"],
+            "colors": ["Black with gold", "Dark blue with gold"],
+            "accessories": "kopiah meukeutop hat, rencong dagger, gold embroidered accessories, matching songket sash"
+          }
+        ]
+      }
+    }
+  ]
+}
