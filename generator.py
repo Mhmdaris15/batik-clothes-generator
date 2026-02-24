@@ -211,6 +211,187 @@ def _parts_to_pil_images(response) -> list[Image.Image]:
                     logger.warning("Failed to decode inline image part: %s", exc)
     return results
 
+# ─── Gemini Flash image generation (generativelanguage.googleapis.com) ────────
+
+
+def _generate_images_with_gemini_flash(
+    prompt: str,
+    num_images: int,
+    face_image: Image.Image,
+    api_key: str | None = None,
+) -> list[Image.Image]:
+    """
+    Two-step Virtual Try-On pipeline:
+      Step 1 → Imagen 4 generates a flat-lay product image of the garment.
+      Step 2 → VTO composites the person wearing that garment.
+    Uses GOOGLE_CLOUD_API_KEY with project+location in the URL.
+    """
+    key = api_key or config.GOOGLE_CLOUD_API_KEY
+    if not key:
+        raise RuntimeError("GOOGLE_CLOUD_API_KEY is not set. Add it to .env.")
+
+    location = config.GOOGLE_CLOUD_LOCATION
+    project = config.GOOGLE_CLOUD_PROJECT
+    timeout = 180
+    results: list[Image.Image] = []
+    batch = max(1, min(4, int(num_images)))
+
+    face_b64 = pil_to_base64(face_image, fmt="JPEG")
+
+    # ── Step 1: Generate clothing product image with Imagen 4 ─────────────
+    imagen_model = os.getenv("IMAGEN_MODEL", "imagen-4.0-generate-001")
+    imagen_url = (
+        f"https://{location}-aiplatform.googleapis.com/v1/projects/{project}"
+        f"/locations/{location}/publishers/google/models/{imagen_model}:predict?key={key}"
+    )
+    garment_payload = {
+        "instances": [{"prompt": prompt}],
+        "parameters": {
+            "sampleCount": 1,
+            "aspectRatio": "3:4",
+            "personGeneration": "dont_allow",
+        },
+    }
+    logger.info("VTO Step 1: Generating garment with %s", imagen_model)
+    resp1 = requests.post(imagen_url, json=garment_payload,
+                          headers={"Content-Type": "application/json"}, timeout=timeout)
+    if resp1.status_code != 200:
+        raise RuntimeError(f"Garment generation failed ({resp1.status_code}): {resp1.text[:600]}")
+
+    garment_data = resp1.json()
+    garment_preds = garment_data.get("predictions", [])
+    if not garment_preds or not garment_preds[0].get("bytesBase64Encoded"):
+        raise RuntimeError(f"Imagen 4 returned no garment image. Response: {garment_data}")
+
+    garment_b64 = garment_preds[0]["bytesBase64Encoded"]
+    logger.info("VTO Step 1: garment image generated OK (%dKB)", len(garment_b64) * 3 // 4 // 1024)
+
+    # ── Step 2: Virtual Try-On — person + garment → composite ─────────────
+    vto_model = config.GEMINI_IMAGE_MODEL  # virtual-try-on-001
+    vto_url = (
+        f"https://{location}-aiplatform.googleapis.com/v1/projects/{project}"
+        f"/locations/{location}/publishers/google/models/{vto_model}:predict?key={key}"
+    )
+    vto_payload = {
+        "instances": [{
+            "personImage": {
+                "image": {"bytesBase64Encoded": face_b64},
+            },
+            "productImages": [{
+                "image": {"bytesBase64Encoded": garment_b64},
+            }],
+        }],
+        "parameters": {
+            "sampleCount": batch,
+            "baseSteps": 32,
+            "personGeneration": "allow_all",
+            "addWatermark": True,
+        },
+    }
+    logger.info("VTO Step 2: model=%s  sampleCount=%d  location=%s", vto_model, batch, location)
+    resp2 = requests.post(vto_url, json=vto_payload,
+                          headers={"Content-Type": "application/json"}, timeout=timeout)
+    if resp2.status_code != 200:
+        raise RuntimeError(f"Virtual Try-On failed ({resp2.status_code}): {resp2.text[:600]}")
+
+    data = resp2.json()
+    if "error" in data:
+        raise RuntimeError(f"Virtual Try-On API error: {data['error']}")
+
+    for pred in data.get("predictions", []):
+        b64 = pred.get("bytesBase64Encoded")
+        if b64:
+            raw = base64.b64decode(b64)
+            results.append(Image.open(io.BytesIO(raw)).convert("RGB"))
+            logger.info("VTO Step 2: image decoded OK")
+
+    if not results:
+        raise RuntimeError(f"Virtual Try-On returned 0 decodable images. Response: {data}")
+
+    return results
+
+# ─── Imagen 4 (Vertex AI – API-key auth) ────────────────────────────────────
+
+
+def _generate_images_with_imagen4(
+    prompt: str,
+    num_images: int,
+    api_key: str | None = None,
+) -> list[Image.Image]:
+    """
+    Generate images using Imagen 4 via the Vertex AI publisher endpoint.
+    Authentication uses a Google Cloud API key (no service account needed).
+
+    Endpoint pattern:
+      POST https://aiplatform.googleapis.com/v1/publishers/google/models/{model}:predict?key={API_KEY}
+    """
+    key = api_key or config.get_imagen_api_key()
+    if not key:
+        raise RuntimeError(
+            "GOOGLE_CLOUD_API_KEY is not set. Add it to .env to use Imagen 4."
+        )
+
+    model = config.get_imagen_model()
+    base_url = config.get_imagen_base_url()
+    url = f"{base_url}/{model}:predict?key={key}"
+
+    timeout = config.get_imagen_timeout_seconds()
+    aspect_ratio = config.get_imagen_aspect_ratio()
+    results: list[Image.Image] = []
+
+    batch_size = max(1, min(4, int(num_images)))
+    payload = {
+        "instances": [{"prompt": prompt}],
+        "parameters": {
+            "sampleCount": batch_size,
+            "aspectRatio": aspect_ratio,
+            "personGeneration": "allow_adult",
+            "safetyFilterLevel": "block_some",
+        },
+    }
+
+    logger.info("Calling Imagen 4 model=%s sampleCount=%d", model, batch_size)
+    try:
+        resp = requests.post(
+            url,
+            json=payload,
+            headers={"Content-Type": "application/json"},
+            timeout=timeout,
+        )
+    except requests.exceptions.Timeout as exc:
+        raise RuntimeError(
+            f"Imagen 4 request timed out after {timeout}s. "
+            "Increase IMAGEN_TIMEOUT_SECONDS in .env and retry."
+        ) from exc
+
+    if resp.status_code != 200:
+        raise RuntimeError(
+            f"Imagen 4 request failed ({resp.status_code}): {resp.text[:600]}"
+        )
+
+    data = resp.json()
+    predictions = data.get("predictions", [])
+    if not predictions:
+        raise RuntimeError(f"Imagen 4 returned no predictions. Response: {data}")
+
+    for prediction in predictions:
+        b64 = prediction.get("bytesBase64Encoded")
+        if not b64:
+            logger.warning("Imagen 4 prediction missing bytesBase64Encoded; skipping.")
+            continue
+        raw = base64.b64decode(b64)
+        mime = prediction.get("mimeType", "image/png")
+        try:
+            img = Image.open(io.BytesIO(raw)).convert("RGB")
+            results.append(img)
+        except Exception as exc:
+            logger.warning("Failed to decode Imagen 4 image bytes: %s", exc)
+
+    if not results:
+        raise RuntimeError("Imagen 4 returned predictions but none could be decoded.")
+
+    return results[:batch_size]
+
 
 def _chutes_headers(token_override: str | None = None) -> dict[str, str]:
     headers = {"Content-Type": "application/json"}
@@ -330,8 +511,18 @@ def generate_outfit_images(
         variation_hint=f"Create {num_images} diverse variations with these styles: {hints}",
     )
 
-    if config.GENERATION_BACKEND == "chutes":
-        results = _generate_images_with_chutes(prompt, face_image, num_images)
+    backend = config.get_generation_backend()
+
+    if backend == "gemini":
+        results = _generate_images_with_gemini_flash(prompt, num_images, face_image)
+        return results[: max(1, min(4, int(num_images)))]
+
+    if backend == "vertex":
+        results = _generate_images_with_imagen4(prompt, num_images)
+        return results[: max(1, min(4, int(num_images)))]
+
+    if backend == "chutes":
+        results = _generate_images_with_chutes(prompt, face_image, num_images, chutes_token=chutes_token)
         return results[: max(1, min(4, int(num_images)))]
 
     image_models = _resolve_image_models(config.IMAGE_MODEL)

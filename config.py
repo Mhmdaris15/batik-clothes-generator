@@ -27,6 +27,12 @@ USE_VERTEX_AI: bool = os.getenv("USE_VERTEX_AI", "true").lower() in {"1", "true"
 GENERATION_BACKEND: str = os.getenv("GENERATION_BACKEND", "chutes").strip().lower()
 
 # Chutes API settings
+# Gemini Flash image generation model (used when GENERATION_BACKEND=gemini)
+GEMINI_IMAGE_MODEL: str = os.getenv("GEMINI_IMAGE_MODEL", "virtual-try-on-001")
+GEMINI_IMAGE_BASE_URL: str = "https://aiplatform.googleapis.com/v1beta/publishers/google/models"
+GOOGLE_CLOUD_LOCATION: str = os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
+GOOGLE_CLOUD_PROJECT: str = os.getenv("GOOGLE_CLOUD_PROJECT", "")
+
 CHUTES_API_KEY: str = os.getenv("CHUTES_API_KEY", "")
 CHUTES_API_TOKEN: str = os.getenv("CHUTES_API_TOKEN", "")
 CHUTES_IMAGE_URL: str = os.getenv("CHUTES_IMAGE_URL", "")
@@ -34,6 +40,37 @@ CHUTES_TIMEOUT_SECONDS: int = int(os.getenv("CHUTES_TIMEOUT_SECONDS", "120"))
 CHUTES_NUM_INFERENCE_STEPS: int = int(os.getenv("CHUTES_NUM_INFERENCE_STEPS", "40"))
 CHUTES_TRUE_CFG_SCALE: float = float(os.getenv("CHUTES_TRUE_CFG_SCALE", "4"))
 CHUTES_NEGATIVE_PROMPT: str = os.getenv("CHUTES_NEGATIVE_PROMPT", "")
+
+# ─── Vertex AI / Imagen 4 ─────────────────────────────────────────────────────
+IMAGEN_MODEL: str = os.getenv("IMAGEN_MODEL", "imagen-4.0-generate-001")
+# Base URL for publisher endpoint — no project ID required when using API key
+IMAGEN_BASE_URL: str = os.getenv(
+    "IMAGEN_BASE_URL",
+    "https://aiplatform.googleapis.com/v1/publishers/google/models",
+)
+IMAGEN_ASPECT_RATIO: str = os.getenv("IMAGEN_ASPECT_RATIO", "1:1")
+IMAGEN_TIMEOUT_SECONDS: int = int(os.getenv("IMAGEN_TIMEOUT_SECONDS", "120"))
+
+
+def get_imagen_api_key() -> str:
+    """Return the Google Cloud API key used to authenticate Imagen requests."""
+    return os.getenv("GOOGLE_CLOUD_API_KEY", GOOGLE_CLOUD_API_KEY)
+
+
+def get_imagen_model() -> str:
+    return os.getenv("IMAGEN_MODEL", IMAGEN_MODEL)
+
+
+def get_imagen_base_url() -> str:
+    return os.getenv("IMAGEN_BASE_URL", IMAGEN_BASE_URL).rstrip("/")
+
+
+def get_imagen_aspect_ratio() -> str:
+    return os.getenv("IMAGEN_ASPECT_RATIO", IMAGEN_ASPECT_RATIO)
+
+
+def get_imagen_timeout_seconds() -> int:
+    return int(os.getenv("IMAGEN_TIMEOUT_SECONDS", str(IMAGEN_TIMEOUT_SECONDS)))
 
 
 def get_generation_backend() -> str:

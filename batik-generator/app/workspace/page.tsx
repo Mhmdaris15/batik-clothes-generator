@@ -25,6 +25,17 @@ type CapturePayload = {
 type GenerateResponse = {
   images: string[];
   prompt: string;
+  garmentReused?: boolean;
+};
+
+type GarmentEntry = {
+  filename: string;
+  outfitId: string;
+  regionId: string;
+  gender: string;
+  prompt?: string;
+  createdAt: string;
+  url: string;
 };
 
 const STORAGE_KEY = "batik_capture_payload";
@@ -37,6 +48,9 @@ export default function WorkspacePage() {
   const [error, setError] = useState<string>("");
   const [prompt, setPrompt] = useState<string>("");
   const [images, setImages] = useState<string[]>([]);
+  const [garments, setGarments] = useState<GarmentEntry[]>([]);
+  const [selectedGarment, setSelectedGarment] = useState<string>("");
+  const [garmentReused, setGarmentReused] = useState<boolean>(false);
 
   useEffect(() => {
     const raw = sessionStorage.getItem(STORAGE_KEY);
@@ -46,6 +60,22 @@ export default function WorkspacePage() {
     }
     setCapture(JSON.parse(raw) as CapturePayload);
   }, [router]);
+
+  // Fetch stored garments on mount
+  useEffect(() => {
+    fetch("/api/garments")
+      .then((r) => r.json())
+      .then((data: { garments: GarmentEntry[] }) => {
+        setGarments(data.garments ?? []);
+      })
+      .catch(() => {});
+  }, []);
+
+  // Filter garments matching current outfit
+  const matchingGarments = useMemo(
+    () => garments.filter((g) => capture?.outfit && g.outfitId === capture.outfit.id),
+    [garments, capture],
+  );
 
   const canGenerate = useMemo(() => Boolean(capture?.faceImageB64 && capture?.outfit), [capture]);
 
@@ -65,10 +95,12 @@ export default function WorkspacePage() {
         },
         body: JSON.stringify({
           regionName: capture.regionName,
+          regionId: capture.regionId,
           gender: capture.gender,
           outfit: capture.outfit,
           faceImageB64: capture.faceImageB64,
           numImages,
+          garmentFilename: selectedGarment || undefined,
         }),
       });
       const result = (await response.json()) as GenerateResponse & { error?: string };
@@ -77,6 +109,13 @@ export default function WorkspacePage() {
       }
       setImages(result.images || []);
       setPrompt(result.prompt || "");
+      setGarmentReused(result.garmentReused ?? false);
+
+      // Refresh garment list (new garment may have been saved)
+      fetch("/api/garments")
+        .then((r) => r.json())
+        .then((data: { garments: GarmentEntry[] }) => setGarments(data.garments ?? []))
+        .catch(() => {});
     } catch (err) {
       setError(err instanceof Error ? err.message : "Generation failed");
     } finally {
@@ -156,6 +195,46 @@ export default function WorkspacePage() {
                   <option value={4}>4</option>
                 </select>
               </div>
+
+              {/* Garment Reuse Picker */}
+              <div>
+                <label className="text-[11px] font-bold uppercase tracking-widest text-[#e8c383]">Garment Source</label>
+                <select
+                  value={selectedGarment}
+                  onChange={(event) => setSelectedGarment(event.target.value)}
+                  className="batik-select mt-2 w-full rounded-lg border border-[#ffffff2b] px-3 py-2 text-sm"
+                >
+                  <option value="">Generate new garment (Imagen 4)</option>
+                  {matchingGarments.length > 0 && (
+                    <option value="" disabled>── Existing for this outfit ──</option>
+                  )}
+                  {matchingGarments.map((g) => (
+                    <option key={g.filename} value={g.filename}>
+                      {g.filename.split("_").slice(0, 2).join(" ")} — {new Date(g.createdAt).toLocaleDateString()}
+                    </option>
+                  ))}
+                  {garments.filter((g) => g.outfitId !== capture?.outfit?.id).length > 0 && (
+                    <option value="" disabled>── Other garments ──</option>
+                  )}
+                  {garments
+                    .filter((g) => g.outfitId !== capture?.outfit?.id)
+                    .map((g) => (
+                      <option key={g.filename} value={g.filename}>
+                        {g.outfitId} — {new Date(g.createdAt).toLocaleDateString()}
+                      </option>
+                    ))}
+                </select>
+                {selectedGarment && (
+                  <div className="mt-2 rounded-lg border border-[#ffffff1a] bg-black/20 p-2">
+                    <img
+                      src={`/api/garments/image/${selectedGarment}`}
+                      alt="Selected garment"
+                      className="h-32 w-full rounded object-contain"
+                    />
+                    <p className="mt-1 text-center text-[10px] text-[#e8c383]">Skip garment generation — VTO only</p>
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className="border-t border-[#ffffff14] p-5">
@@ -195,7 +274,14 @@ export default function WorkspacePage() {
 
             {prompt && (
               <details className="mb-4 rounded-lg bg-black/30 p-3 text-sm text-[#f7f1e6cc]">
-                <summary className="cursor-pointer font-medium">Generation prompt</summary>
+                <summary className="cursor-pointer font-medium">
+                  Generation prompt
+                  {garmentReused && (
+                    <span className="ml-2 rounded-full bg-[#c5a05930] px-2 py-0.5 text-[10px] font-bold text-[#e8c383]">
+                      GARMENT REUSED
+                    </span>
+                  )}
+                </summary>
                 <p className="mt-2 whitespace-pre-wrap">{prompt}</p>
               </details>
             )}

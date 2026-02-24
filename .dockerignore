@@ -1,0 +1,12 @@
+node_modules
+.next
+batik-gen/
+__pycache__/
+*.pyc
+.git
+.env
+.env.local
+*.md
+photos/
+batikvision-ai/
+generated-images/

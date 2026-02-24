@@ -32,7 +32,9 @@ export function getServerEnv(key: string, fallback = ""): string {
   }
 
   if (!cache) {
-    const parentEnvPath = path.join(process.cwd(), "..", ".env");
+    // Cloud Run: DATA_DIR=/data; local dev: parent of cwd
+    const dataDir = process.env.DATA_DIR || path.join(process.cwd(), "..");
+    const parentEnvPath = path.join(dataDir, ".env");
     cache = parseDotEnv(parentEnvPath);
   }
 

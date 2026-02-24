@@ -4,7 +4,9 @@ import path from "node:path";
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), "..", "clothes_data.json");
+    // Cloud Run: DATA_DIR=/data; local dev: parent of cwd
+    const dataDir = process.env.DATA_DIR || path.join(process.cwd(), "..");
+    const filePath = path.join(dataDir, "clothes_data.json");
     const raw = await fs.readFile(filePath, "utf-8");
     const parsed = JSON.parse(raw);
     return NextResponse.json(parsed);
