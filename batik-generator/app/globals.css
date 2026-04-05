@@ -1,8 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1a100d;
+  --background: #120e0c;
   --foreground: #f7f1e6;
+
+  /* Surface layers */
+  --surface-1: #1a1412;
+  --surface-2: #221916;
+  --surface-3: #2a201c;
+  --surface-4: #352820;
+
+  /* Border */
+  --border: #3a2a22;
+  --border-subtle: #2a1e18;
+  --border-glow: rgba(197, 160, 89, 0.35);
+
+  /* Gold accent */
+  --gold: #c5a059;
+  --gold-light: #e7cf9d;
+  --gold-dim: #a8883e;
+  --gold-glow: rgba(197, 160, 89, 0.15);
+
+  /* Text */
+  --text-primary: #f7f1e6;
+  --text-secondary: #a89f91;
+  --text-muted: #8b7e6a;
+  --text-dim: #5a4e42;
+
+  /* Status */
+  --success: #4ade80;
+  --error: #f87171;
+  --warning: #fbbf24;
 }
 
 @theme inline {
@@ -12,46 +40,173 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a100d;
-    --foreground: #f7f1e6;
-  }
-}
+/* ── Base ─────────────────────────────────────────────────────────────────── */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dim);
+}
+
+/* ── Background ───────────────────────────────────────────────────────────── */
 
 .batik-bg {
   background-image:
-    radial-gradient(at 0% 0%, rgba(139, 94, 60, 0.25) 0px, transparent 45%),
-    radial-gradient(at 100% 0%, rgba(197, 160, 89, 0.18) 0px, transparent 45%),
-    radial-gradient(at 100% 100%, rgba(78, 52, 46, 0.25) 0px, transparent 45%);
+    radial-gradient(at 0% 0%,   rgba(139, 94, 60, 0.22) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(197, 160, 89, 0.14) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(78, 52, 46, 0.22) 0px, transparent 50%);
 }
+
+/* ── Glass panel ──────────────────────────────────────────────────────────── */
 
 .glass-panel {
-  background: linear-gradient(135deg, rgba(42, 29, 24, 0.72), rgba(20, 12, 9, 0.72));
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(197, 160, 89, 0.22);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(42, 29, 24, 0.75), rgba(18, 11, 9, 0.75));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
+/* ── Gold text ────────────────────────────────────────────────────────────── */
+
 .gold-gradient-text {
-  background: linear-gradient(90deg, #f5e6c8, #c5a059);
+  background: linear-gradient(90deg, #f5e6c8 0%, #c5a059 60%, #e7cf9d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+/* ── Select ───────────────────────────────────────────────────────────────── */
+
 .batik-select {
   background-color: rgba(0, 0, 0, 0.35);
   color: #f7f1e6;
 }
-
 .batik-select option {
   background-color: #1f1511;
   color: #f7f1e6;
+}
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+  50%       { box-shadow: 0 0 20px 4px rgba(197, 160, 89, 0.25); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes skeleton-wave {
+  0%   { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #c5a059 0%, #f5e6c8 40%, #c5a059 60%, #e7cf9d 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.gold-shimmer-btn {
+  background: linear-gradient(90deg, #c5a059 0%, #e7cf9d 40%, #c5a059 80%, #b38f4a 100%);
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* ── Skeleton loader ──────────────────────────────────────────────────────── */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 25%,
+    var(--surface-3) 50%,
+    var(--surface-2) 75%
+  );
+  background-size: 200px 100%;
+  animation: skeleton-wave 1.4s ease infinite;
+  border-radius: 8px;
+}
+
+/* ── Card hover glow ──────────────────────────────────────────────────────── */
+
+.card-hover-glow {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+.card-hover-glow:hover {
+  box-shadow: 0 0 0 1px rgba(197, 160, 89, 0.4), 0 8px 32px rgba(197, 160, 89, 0.12);
+  border-color: rgba(197, 160, 89, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+/* ── Gold divider ─────────────────────────────────────────────────────────── */
+
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.4), transparent);
+}
+
+/* ── Focus ring ───────────────────────────────────────────────────────────── */
+
+.focus-gold:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.4);
+}
+
+/* ── Step indicator line ──────────────────────────────────────────────────── */
+
+.step-line-active {
+  background: linear-gradient(90deg, #c5a059, #e7cf9d);
+}
+
+/* ── Batik pattern overlay (decorative) ──────────────────────────────────── */
+
+.batik-pattern-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c5a059' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }

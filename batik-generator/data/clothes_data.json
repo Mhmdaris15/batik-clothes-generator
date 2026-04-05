@@ -1,0 +1,1130 @@
+{
+  "regions": [
+    {
+      "id": "aceh",
+      "name": "Aceh",
+      "description": "Aceh - The Veranda of Mecca",
+      "landmark": "Baiturrahman Grand Mosque",
+      "background_prompt": "majestic Baiturrahman Grand Mosque in Banda Aceh with white domes and lush tropical gardens",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_aceh_wanita",
+            "name": "Pakaian Adat Aceh Wanita",
+            "description": "Elegant and modest traditional female dress from Aceh. Features an embroidered long-sleeved blouse (baju meukasah) with intricate gold thread Aceh border embroidery (tekat), paired with a long wrapped skirt with matching gold embroidery borders. A woven silk songket shawl is draped over the head and shoulders modestly.",
+            "motifs": ["Aceh geometric gold embroidery", "Pinto Aceh pattern", "Floral gold tekat"],
+            "colors": ["Black with gold", "Purple with gold", "Green with gold", "Red with gold"],
+            "accessories": "elaborate golden crown (kopiah meukeutop), gold jewelry, gold tekat embroidered accessories"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_aceh_pria",
+            "name": "Pakaian Adat Aceh Pria",
+            "description": "Dignified traditional male attire from Aceh. Features a black or dark-colored long-sleeved embroidered jacket with gold Aceh-style embroidery borders, paired with matching pants and a rencong dagger at the waist.",
+            "motifs": ["Aceh gold embroidery", "Geometric border patterns"],
+            "colors": ["Black with gold", "Dark blue with gold"],
+            "accessories": "kopiah meukeutop hat, rencong dagger, gold embroidered accessories, matching songket sash"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sumatera_utara",
+      "name": "Sumatera Utara",
+      "description": "North Sumatra - Batak",
+      "landmark": "Lake Toba",
+      "background_prompt": "stunning panoramic view of Lake Toba with traditional Batak Toba houses and lush green hills",
+      "clothes": {
+        "female": [
+          {
+            "id": "ulos_batak_wanita",
+            "name": "Pakaian Adat Batak Wanita",
+            "description": "Traditional Batak female attire featuring the sacred ulos woven textile draped over the shoulder or wrapped around the body. Rich red, black, and white geometric patterns on hand-woven ulos cloth.",
+            "motifs": ["Ulos Ragihotang", "Ulos Sibolang", "Ulos Ragi Idup geometric"],
+            "colors": ["Deep red", "Black", "White", "Gold thread accent"],
+            "accessories": "gold headpiece, silver and gold jewelry, ulos draped over shoulder"
+          }
+        ],
+        "male": [
+          {
+            "id": "ulos_batak_pria",
+            "name": "Pakaian Adat Batak Pria",
+            "description": "Traditional Batak male ceremonial attire with ulos textile wrapped and draped across the body. Features a mandarin collar shirt with ulos cloth draped over the shoulder.",
+            "motifs": ["Ulos Ragi Hotang", "Ulos Bintang Maratur geometric"],
+            "colors": ["Red", "Black", "White with gold threads"],
+            "accessories": "gold headpiece or songkok hat, gold jewelry, ulos drape"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sumatera_barat",
+      "name": "Sumatera Barat",
+      "description": "West Sumatra - Minangkabau",
+      "landmark": "Jam Gadang Clock Tower",
+      "background_prompt": "iconic Jam Gadang clock tower in Bukittinggi with Minangkabau rooftop architecture and Ngarai Sianok canyon",
+      "clothes": {
+        "female": [
+          {
+            "id": "bundo_kanduang",
+            "name": "Bundo Kanduang",
+            "description": "The iconic Minangkabau female traditional dress. Features a distinctive large wing-shaped gold headpiece (suntiang), a dark silk brocade jacket with gold trimming, embroidered sarong with songket gold threads.",
+            "motifs": ["Songket gold brocade", "Minang floral", "Geometric Minang"],
+            "colors": ["Black", "Deep red", "Gold", "Dark green"],
+            "accessories": "large suntiang gold crown, full gold jewelry set, songket wrap, embroidered shawl"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_taluak_balango",
+            "name": "Baju Taluak Balango Minang",
+            "description": "Traditional Minangkabau male formal attire. Long-sleeved embroidered jacket with gold thread embroidery on black fabric, baggy pants, a songket cloth draped at the waist.",
+            "motifs": ["Gold embroidery on black", "Songket brocade"],
+            "colors": ["Black with gold", "Dark red", "Deep purple"],
+            "accessories": "tanjak or destar headwrap, songket sash, traditional keris, gold embroidered accessories"
+          }
+        ]
+      }
+    },
+    {
+      "id": "riau",
+      "name": "Riau",
+      "description": "Riau - Malay Heritage",
+      "landmark": "An-Nur Grand Mosque Pekanbaru",
+      "background_prompt": "grand An-Nur Mosque in Pekanbaru with Malay-style architecture and palm-lined gardens",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_kurung_riau",
+            "name": "Baju Kurung Melayu Riau",
+            "description": "Traditional Malay Riau female attire featuring a loose-fitting long-sleeved baju kurung top paired with a matching kain songket wraparound skirt.",
+            "motifs": ["Songket Siak", "Pucuk rebung bamboo shoot motif"],
+            "colors": ["Soft pink", "Royal purple", "Emerald green", "Gold accents"],
+            "accessories": "selendang songket shawl, gold jewelry, floral hairpiece"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_melayu_riau",
+            "name": "Baju Melayu Riau Pria",
+            "description": "Traditional Riau Malay male attire. A collarless long-sleeved top (baju teluk belanga) with songket sampin cloth at the waist and tanjak headwear.",
+            "motifs": ["Songket Siak weave", "Pucuk rebung"],
+            "colors": ["Deep blue", "Maroon", "Gold accents"],
+            "accessories": "tanjak headwear, songket sampin, keris, formal shoes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jambi",
+      "name": "Jambi",
+      "description": "Jambi - Malay Heritage",
+      "landmark": "Muaro Jambi Temple Complex",
+      "background_prompt": "ancient Muaro Jambi Buddhist temple ruins surrounded by tropical forest along the Batang Hari river",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_kurung_jambi",
+            "name": "Baju Kurung Jambi",
+            "description": "Traditional Jambi Malay female attire with baju kurung top and batik Jambi kain wrap.",
+            "motifs": ["Batik Jambi durian pecah", "Kapal sanggat", "Bungo tanjung"],
+            "colors": ["Deep red", "Indigo", "Gold accents"],
+            "accessories": "selendang shawl, gold jewelry, traditional hair ornaments"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_melayu_jambi",
+            "name": "Baju Melayu Jambi Pria",
+            "description": "Traditional Jambi Malay male attire with teluk belanga top, sarong, and songkok.",
+            "motifs": ["Batik Jambi", "Songket Jambi"],
+            "colors": ["Dark brown", "Black", "Gold"],
+            "accessories": "songkok hat, batik sarong, traditional sandals"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sumatera_selatan",
+      "name": "Sumatera Selatan",
+      "description": "South Sumatra - Palembang",
+      "landmark": "Ampera Bridge",
+      "background_prompt": "iconic Ampera Bridge over the Musi River in Palembang at golden hour with traditional houses along the riverbank",
+      "clothes": {
+        "female": [
+          {
+            "id": "aesan_gede_wanita",
+            "name": "Aesan Gede Palembang",
+            "description": "The most elaborate traditional female ceremonial dress from Palembang. Features rich gold songket fabric, a towering crown (siger), and layers of gold jewelry.",
+            "motifs": ["Songket Palembang gold brocade", "Lepus motif", "Nago besaung"],
+            "colors": ["Red with gold", "Maroon with gold", "Black with gold"],
+            "accessories": "siger crown, full gold jewelry set, gold-threaded songket selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "aesan_gede_pria",
+            "name": "Aesan Gede Palembang Pria",
+            "description": "Traditional Palembang male ceremonial attire with songket jacket, gold-embroidered pants, and tanjak headpiece.",
+            "motifs": ["Songket Palembang", "Gold brocade"],
+            "colors": ["Deep red with gold", "Black with gold"],
+            "accessories": "tanjak headpiece, keris dagger, songket sash"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bengkulu",
+      "name": "Bengkulu",
+      "description": "Bengkulu - Land of Rafflesia",
+      "landmark": "Fort Marlborough",
+      "background_prompt": "historic Fort Marlborough in Bengkulu with ocean view and lush tropical vegetation",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_bengkulu_wanita",
+            "name": "Pakaian Adat Bengkulu Wanita",
+            "description": "Traditional Bengkulu female attire featuring besurek batik with Arabic calligraphy motifs, paired with kebaya top and songket sarong wrap.",
+            "motifs": ["Batik besurek calligraphy", "Rafflesia flower motif"],
+            "colors": ["Deep red", "Brown", "Gold accents"],
+            "accessories": "gold crown, beaded necklaces, songket selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_bengkulu_pria",
+            "name": "Pakaian Adat Bengkulu Pria",
+            "description": "Traditional Bengkulu male attire with besurek batik shirt, dark pants, and songkok headwear.",
+            "motifs": ["Batik besurek", "Simple geometric"],
+            "colors": ["Brown", "Black", "Gold trim"],
+            "accessories": "songkok hat, batik sarong, keris"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lampung",
+      "name": "Lampung",
+      "description": "Lampung - Southern Sumatra Gateway",
+      "landmark": "Way Kambas National Park",
+      "background_prompt": "lush Way Kambas National Park landscape with wild elephants and tropical rainforest",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_lampung_wanita",
+            "name": "Pakaian Adat Lampung Wanita",
+            "description": "Traditional Lampung female attire featuring tapis woven textile as a wrap skirt, paired with a fitted top and elaborate gold crown (siger).",
+            "motifs": ["Tapis woven geometric", "Ship motif", "Gold thread"],
+            "colors": ["Deep red", "Gold", "Black"],
+            "accessories": "siger gold crown, elaborate gold necklace and bracelets, tapis sarong"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_lampung_pria",
+            "name": "Pakaian Adat Lampung Pria",
+            "description": "Traditional Lampung male attire with embroidered jacket, sarung tapis wrap, and kikat headcloth.",
+            "motifs": ["Tapis weave", "Gold embroidery"],
+            "colors": ["Black", "Gold", "Deep red"],
+            "accessories": "kikat headcloth, tapis sarong, keris dagger"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kep_bangka_belitung",
+      "name": "Kepulauan Bangka Belitung",
+      "description": "Bangka Belitung Islands",
+      "landmark": "Tanjung Tinggi Beach",
+      "background_prompt": "dramatic granite boulders of Tanjung Tinggi Beach in Belitung with crystal clear turquoise water",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_babel_wanita",
+            "name": "Pakaian Adat Bangka Belitung Wanita",
+            "description": "Traditional Bangka Belitung female attire combining Malay and Chinese Peranakan influences. Colorful kebaya with intricate embroidery and batik sarong.",
+            "motifs": ["Cual woven fabric", "Peranakan floral"],
+            "colors": ["Bright red", "Yellow", "Green"],
+            "accessories": "gold hairpins, peranakan jewelry, selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_babel_pria",
+            "name": "Pakaian Adat Bangka Belitung Pria",
+            "description": "Traditional male attire with Malay-style baju kurung and cual woven sarong.",
+            "motifs": ["Cual woven", "Simple geometric"],
+            "colors": ["White", "Dark blue", "Green"],
+            "accessories": "songkok, cual sarong, traditional shoes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kep_riau",
+      "name": "Kepulauan Riau",
+      "description": "Riau Islands - Maritime Malay",
+      "landmark": "Penyengat Island Royal Mosque",
+      "background_prompt": "historic yellow Royal Mosque on Penyengat Island with turquoise sea and traditional Malay stilt houses",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_kurung_kepri",
+            "name": "Baju Kurung Kepulauan Riau",
+            "description": "Maritime Malay baju kurung in pastel colors with songket details.",
+            "motifs": ["Songket Riau", "Shell and wave motifs"],
+            "colors": ["Turquoise", "Soft yellow", "Pastel purple"],
+            "accessories": "dokoh pendant, gold hairpins, selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_melayu_kepri",
+            "name": "Baju Melayu Kepulauan Riau Pria",
+            "description": "Maritime Malay male attire with baju teluk belanga, sampin songket at the waist.",
+            "motifs": ["Songket weave", "Maritime motifs"],
+            "colors": ["Royal blue", "White", "Gold"],
+            "accessories": "tanjak headwear, sampin songket, formal shoes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dki_jakarta",
+      "name": "DKI Jakarta",
+      "description": "Jakarta - Betawi",
+      "landmark": "Monas (National Monument)",
+      "background_prompt": "iconic Monas National Monument in Jakarta with the golden flame glistening under blue sky and city park",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_encim_betawi",
+            "name": "Kebaya Encim Betawi",
+            "description": "Elegant Betawi Peranakan Chinese-influenced kebaya from Jakarta. Features a colorful embroidered short kebaya with floral embroidery in a Peranakan style, paired with a batik skirt.",
+            "motifs": ["Floral embroidery", "Butterfly", "Rose"],
+            "colors": ["Pink", "Light green", "Sky blue", "Lavender", "Yellow"],
+            "accessories": "floral hair accessories, gold brooches, peranakan porcelain-bead accessories"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_sadariah_betawi",
+            "name": "Baju Sadariah Betawi",
+            "description": "Traditional Betawi male attire from Jakarta. Plain white or bright-colored long-sleeved mandarin collar shirt paired with batik sarong and a songkok/peci hat.",
+            "motifs": ["Plain", "Batik sarong motifs"],
+            "colors": ["White", "Light blue", "Cream"],
+            "accessories": "songkok/peci black cap, batik sarong, sandal selop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jawa_barat",
+      "name": "Jawa Barat",
+      "description": "West Java - Sundanese",
+      "landmark": "Tangkuban Perahu Volcano",
+      "background_prompt": "scenic Tangkuban Perahu volcanic crater in West Java with misty highlands and tea plantations",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_sunda",
+            "name": "Kebaya Sunda",
+            "description": "Sundanese kebaya from West Java, known for vibrant colors. Bright and colorful fitted kebaya paired with batik Sunda or kain lilit wrap.",
+            "motifs": ["Mega Mendung", "Lereng Sunda", "Buketan"],
+            "colors": ["Bright green", "Orange", "Red", "Purple"],
+            "accessories": "siger crown, flower hairpiece, gold jewelry, selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "pangsi_sunda",
+            "name": "Pangsi Sunda",
+            "description": "Traditional Sundanese male outfit with a plain white or light-colored shirt tucked into black loose pants (pangsi), with a sarong wrapped around the waist and iket kepala head cloth.",
+            "motifs": ["Plain", "Simple batik border"],
+            "colors": ["White shirt", "Black pants", "Batik sarong in earth tones"],
+            "accessories": "iket kepala head cloth, batik sarong, sandal tarumpah"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jawa_tengah",
+      "name": "Jawa Tengah",
+      "description": "Central Java",
+      "landmark": "Borobudur Temple",
+      "background_prompt": "magnificent Borobudur Temple at sunrise with misty mountains and lush Javanese landscape",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_jawa",
+            "name": "Kebaya Jawa",
+            "description": "Traditional Javanese kebaya blouse with batik jarik skirt wrap. Deep indigo and brown batik parang motif. Elegant fitted lace-trimmed kebaya paired with a batik kain jarik wrapped around the waist.",
+            "motifs": ["Parang", "Sido Mukti", "Kawung", "Truntum"],
+            "colors": ["Cream white", "Soft yellow", "Pastel green", "Dusty pink"],
+            "accessories": "gold jewelry, sanggul bun, selendang scarf, kebaya shoes"
+          },
+          {
+            "id": "kebaya_kartini",
+            "name": "Kebaya Kartini",
+            "description": "Elegant kebaya inspired by Raden Ajeng Kartini. Long-sleeved fitted lace kebaya in white or soft colors paired with batik jarik wrap skirt.",
+            "motifs": ["Truntum", "Sidomukti", "Wahyu Tumurun"],
+            "colors": ["White", "Ivory", "Light blue", "Soft lavender"],
+            "accessories": "gold brooches, jasmine hair accessories, gold necklace, kebaya heels"
+          }
+        ],
+        "male": [
+          {
+            "id": "beskap_jawa",
+            "name": "Beskap Jawa",
+            "description": "Traditional Javanese formal male attire. A fitted collarless jacket (beskap) in dark fabric with batik kain jarik wrap around the waist.",
+            "motifs": ["Sido Mukti", "Parang Rusak", "Kawung", "Lereng"],
+            "colors": ["Dark brown", "Navy blue", "Black", "Deep indigo"],
+            "accessories": "blangkon headwrap, keris dagger, batik sash, traditional sandals"
+          },
+          {
+            "id": "surjan_lurik",
+            "name": "Surjan Lurik",
+            "description": "Traditional Javanese male shirt made from lurik woven fabric. Collarless button-front shirt in striped lurik pattern paired with batik jarik sarong.",
+            "motifs": ["Lurik stripes", "Parang", "Kawung"],
+            "colors": ["Brown stripes", "Blue stripes", "Green stripes"],
+            "accessories": "blangkon, batik jarik, traditional sandals"
+          }
+        ]
+      }
+    },
+    {
+      "id": "di_yogyakarta",
+      "name": "DI Yogyakarta",
+      "description": "Yogyakarta Special Region",
+      "landmark": "Prambanan Temple",
+      "background_prompt": "majestic Prambanan Hindu Temple complex at golden hour with dramatic Javanese sky",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_jogja",
+            "name": "Kebaya Yogyakarta",
+            "description": "Refined Yogyakarta-style kebaya featuring classic Jogja batik motifs. Elegant white or soft-colored kebaya paired with kain gringsing or kawung batik.",
+            "motifs": ["Kawung", "Gringsing", "Nitik Yogya"],
+            "colors": ["White", "Ivory", "Soft gold", "Natural brown"],
+            "accessories": "jasmine garland, gold brooches, sanggul hairstyle, selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "beskap_jogja",
+            "name": "Beskap Jogja",
+            "description": "Yogyakarta-style beskap jacket in the court (keraton) tradition. Dark-colored fitted jacket with classic Yogya batik motifs.",
+            "motifs": ["Parang Rusak Barong", "Kawung", "Truntum"],
+            "colors": ["Dark brown", "Black", "Deep indigo"],
+            "accessories": "blangkon Jogja style, keris dagger, batik sash"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jawa_timur",
+      "name": "Jawa Timur",
+      "description": "East Java",
+      "landmark": "Mount Bromo",
+      "background_prompt": "breathtaking sunrise over Mount Bromo volcanic landscape with sea of sand and misty caldera",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_madura",
+            "name": "Kebaya Madura",
+            "description": "Bold and vibrant Madurese kebaya from East Java. Known for striking bright colors and bold batik pesisiran coastal motifs.",
+            "motifs": ["Batik Madura", "Batik Pesisiran", "Tanjung Bumi motif"],
+            "colors": ["Bright red", "Vivid yellow", "Hot pink", "Electric blue"],
+            "accessories": "gold jewelry, flower hairpiece, bold colored selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_jatim_pria",
+            "name": "Pakaian Adat Jawa Timur Pria",
+            "description": "Traditional East Java male attire with loose white shirt, batik sarong, and peci hat.",
+            "motifs": ["Batik Jawa Timuran", "Pesisiran motif"],
+            "colors": ["White", "Bold batik colors"],
+            "accessories": "peci hat, batik sarong, sandals"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banten",
+      "name": "Banten",
+      "description": "Banten - Sultanate Heritage",
+      "landmark": "Old Banten Grand Mosque",
+      "background_prompt": "historic Masjid Agung Banten with its white tiered rooftop and ancient sultanate courtyard",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_banten_wanita",
+            "name": "Pakaian Adat Banten Wanita",
+            "description": "Traditional Banten female attire with Baduy-influenced white and indigo-dyed fabrics, paired with woven kain.",
+            "motifs": ["Batik Banten", "Seren taun geometric"],
+            "colors": ["White", "Indigo", "Natural brown"],
+            "accessories": "silver jewelry, selendang, traditional hair ornaments"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_banten_pria",
+            "name": "Pakaian Adat Banten Pria",
+            "description": "Traditional Banten male attire influenced by the Baduy and Sultanate Banten heritage. Loose white shirt with dark woven sarong.",
+            "motifs": ["Baduy weave", "Simple geometric"],
+            "colors": ["White", "Dark blue", "Black"],
+            "accessories": "ikat kepala headcloth, destar, sarong"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bali",
+      "name": "Bali",
+      "description": "Bali - Island of the Gods",
+      "landmark": "Uluwatu Temple",
+      "background_prompt": "stunning Pura Uluwatu temple perched on dramatic cliff edge overlooking the Indian Ocean at sunset in Bali",
+      "clothes": {
+        "female": [
+          {
+            "id": "kebaya_bali",
+            "name": "Kebaya Bali",
+            "description": "Elegant Balinese lace kebaya in vibrant colors paired with kain endek or songket woven fabric and a colorful sash (selendang).",
+            "motifs": ["Endek woven", "Songket gold threads", "Prada golden pattern"],
+            "colors": ["White", "Pink", "Yellow", "Light green", "Purple"],
+            "accessories": "golden flower hairpiece, gold jewelry, colorful selendang sash"
+          },
+          {
+            "id": "payas_agung",
+            "name": "Payas Agung Bali",
+            "description": "The most formal Balinese female ceremonial dress. Features gold-threaded songket cloth, an ornate golden crown (gelungan), elaborate gold jewelry.",
+            "motifs": ["Songket gold brocade", "Prada gold leaf"],
+            "colors": ["Gold", "Red", "Deep purple", "Black"],
+            "accessories": "elaborate golden gelungan crown, full gold jewelry set"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_bali_pria",
+            "name": "Pakaian Adat Bali Pria",
+            "description": "Traditional Balinese male ceremonial attire: white shirt, udeng headband, kain kampuh or saput endek draped over the waist, a golden sash.",
+            "motifs": ["Endek woven", "Poleng checkered black-white", "Songket"],
+            "colors": ["White top", "Gold sash", "Endek in earth tones or bright colors"],
+            "accessories": "udeng headband, kris dagger, golden sash"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nusa_tenggara_barat",
+      "name": "Nusa Tenggara Barat",
+      "description": "West Nusa Tenggara - Lombok and Sumbawa",
+      "landmark": "Mount Rinjani",
+      "background_prompt": "majestic Mount Rinjani with Segara Anak crater lake in Lombok and lush tropical forest",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_ntb_wanita",
+            "name": "Pakaian Adat Sasak Wanita",
+            "description": "Traditional Sasak female attire from Lombok featuring songket woven fabric in bold colors.",
+            "motifs": ["Songket Sasak", "Subahnale geometric", "Wayang motif"],
+            "colors": ["Deep red", "Gold", "Black", "Purple"],
+            "accessories": "gold crown, songket selendang, gold jewelry"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_ntb_pria",
+            "name": "Pakaian Adat Sasak Pria",
+            "description": "Traditional Sasak male attire with sapuk headcloth, loose shirt, and songket sarong wrapped at the waist.",
+            "motifs": ["Songket Sasak", "Geometric weave"],
+            "colors": ["Black", "White", "Gold"],
+            "accessories": "sapuk headcloth, keris, songket sarong"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nusa_tenggara_timur",
+      "name": "Nusa Tenggara Timur",
+      "description": "East Nusa Tenggara",
+      "landmark": "Komodo Island",
+      "background_prompt": "rugged Komodo Island landscape with savanna hills, turquoise waters, and traditional fishing village",
+      "clothes": {
+        "female": [
+          {
+            "id": "tenun_ikat_ntt_wanita",
+            "name": "Tenun Ikat NTT Wanita",
+            "description": "Beautiful handwoven ikat textile dress from NTT. Wrap-around handwoven ikat cloth with bold geometric and natural motifs in earthy tones.",
+            "motifs": ["Geometric tribal", "Crocodile motif", "Horse motif", "Patola diamond"],
+            "colors": ["Rust red", "Indigo blue", "Earthy brown", "Natural white"],
+            "accessories": "beaded necklaces, silver jewelry, traditional hair combs"
+          }
+        ],
+        "male": [
+          {
+            "id": "tenun_ikat_ntt_pria",
+            "name": "Tenun Ikat NTT Pria",
+            "description": "Traditional male attire from NTT featuring handwoven ikat cloth. A woven ikat shawl (selimut) draped over the shoulder and a sarong around the waist.",
+            "motifs": ["Tribal geometric", "Animal totems", "Ancestor spirit motifs"],
+            "colors": ["Dark indigo", "Rust", "Earthy tones"],
+            "accessories": "iket woven headband, silver or brass accessories, carved wooden ornaments"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kalimantan_barat",
+      "name": "Kalimantan Barat",
+      "description": "West Kalimantan - Dayak and Malay",
+      "landmark": "Kapuas River",
+      "background_prompt": "vast Kapuas River with traditional Dayak longhouses and dense Borneo rainforest",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_kalbar_wanita",
+            "name": "Pakaian Adat Dayak Kalbar Wanita",
+            "description": "Dayak traditional female costume from West Kalimantan with colorful beaded top, fringed skirt with beadwork.",
+            "motifs": ["Dayak tribal geometric", "Hornbill motif", "Tree of life"],
+            "colors": ["Red", "Yellow", "Black with colorful beadwork"],
+            "accessories": "feathered headdress, beaded necklaces and bracelets"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_kalbar_pria",
+            "name": "Pakaian Adat Dayak Kalbar Pria",
+            "description": "Dayak warrior attire from West Kalimantan with beaded vest, loincloth wrap, and elaborate feathered headdress.",
+            "motifs": ["Dayak tribal", "Warrior patterns"],
+            "colors": ["Black", "Red", "Yellow with featherwork"],
+            "accessories": "feathered headdress, mandau sword, beaded accessories"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kalimantan_tengah",
+      "name": "Kalimantan Tengah",
+      "description": "Central Kalimantan - Dayak Ngaju",
+      "landmark": "Tanjung Puting National Park",
+      "background_prompt": "lush Tanjung Puting National Park with klotok boat on blackwater river and orangutans in the canopy",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_kalteng_wanita",
+            "name": "Pakaian Adat Dayak Ngaju Wanita",
+            "description": "Traditional Dayak Ngaju female attire with woven rattan and beadwork top, long beaded sarong, and distinctive headpiece.",
+            "motifs": ["Dayak Ngaju spiral", "Tingang hornbill", "Batang garing tree of life"],
+            "colors": ["Red", "Black", "Yellow", "White beads"],
+            "accessories": "hornbill feather headpiece, beaded necklaces, silver bracelets"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_kalteng_pria",
+            "name": "Pakaian Adat Dayak Ngaju Pria",
+            "description": "Traditional Dayak Ngaju male attire with beaded vest, loincloth, and elaborate headdress with hornbill casque.",
+            "motifs": ["Dayak Ngaju geometric", "Hornbill sacred motif"],
+            "colors": ["Black", "Red", "Yellow"],
+            "accessories": "hornbill casque headdress, mandau sword, shield, body ornaments"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kalimantan_selatan",
+      "name": "Kalimantan Selatan",
+      "description": "South Kalimantan - Banjar",
+      "landmark": "Floating Market Banjarmasin",
+      "background_prompt": "colorful floating market on the Barito River in Banjarmasin with traditional jukung boats and dawn light",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_kalsel_wanita",
+            "name": "Pakaian Adat Banjar Wanita",
+            "description": "Traditional Banjar female attire with richly embroidered kubaya in dark velvet with gold embroidery, paired with kain sasirangan batik sarong.",
+            "motifs": ["Sasirangan dye-resist", "Gold embroidery", "Floral Banjar"],
+            "colors": ["Deep purple", "Dark green", "Gold", "Maroon"],
+            "accessories": "laung crown, gold jewelry set, sasirangan selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_kalsel_pria",
+            "name": "Pakaian Adat Banjar Pria",
+            "description": "Traditional Banjar male attire with taluk belanga top, sasirangan sarong, and kopiah headwear.",
+            "motifs": ["Sasirangan dye-resist", "Banjar geometric"],
+            "colors": ["Black", "Yellow", "Gold"],
+            "accessories": "kopiah hat, sasirangan sarong, keris"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kalimantan_timur",
+      "name": "Kalimantan Timur",
+      "description": "East Kalimantan",
+      "landmark": "Derawan Islands",
+      "background_prompt": "pristine Derawan Islands with overwater wooden walkways, turquoise lagoons, and coconut palms",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_kaltim_wanita",
+            "name": "Pakaian Adat Kutai Wanita",
+            "description": "Traditional Kutai female attire from East Kalimantan with songket-influenced fabrics and Kutai Kertanegara royal heritage styling.",
+            "motifs": ["Kutai songket", "Doyo woven leaf fiber"],
+            "colors": ["Yellow gold", "Deep red", "Black"],
+            "accessories": "gold crown, heavy gold jewelry, songket shawl"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_kaltim_pria",
+            "name": "Pakaian Adat Kutai Pria",
+            "description": "Traditional Kutai male attire with embroidered jacket, songket sarong, and royal-style headwear.",
+            "motifs": ["Kutai royal embroidery", "Gold brocade"],
+            "colors": ["Black with gold", "Deep red"],
+            "accessories": "kopiah headwear, songket sarong, keris"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kalimantan_utara",
+      "name": "Kalimantan Utara",
+      "description": "North Kalimantan - Borneo Frontier",
+      "landmark": "Heart of Borneo Rainforest",
+      "background_prompt": "pristine Heart of Borneo primary rainforest with massive dipterocarp trees and misty mountains",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_kaltara_wanita",
+            "name": "Pakaian Adat Tidung Wanita",
+            "description": "Traditional Tidung female attire from North Kalimantan with beadwork-adorned blouse and woven skirt.",
+            "motifs": ["Tidung beadwork", "Borneo floral", "Geometric weave"],
+            "colors": ["Red", "Black", "Yellow beads"],
+            "accessories": "beaded headband, layered bead necklaces, woven bracelets"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_kaltara_pria",
+            "name": "Pakaian Adat Tidung Pria",
+            "description": "Traditional Tidung male attire with beadwork vest, loincloth, and headband.",
+            "motifs": ["Tidung geometric", "Tribal patterns"],
+            "colors": ["Black", "Red", "Yellow"],
+            "accessories": "beaded headband, mandau sword, arm bands"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sulawesi_utara",
+      "name": "Sulawesi Utara",
+      "description": "North Sulawesi - Minahasa",
+      "landmark": "Bunaken Marine Park",
+      "background_prompt": "vibrant Bunaken National Marine Park with crystal clear waters, coral reefs, and lush volcanic island backdrop",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_sulut_wanita",
+            "name": "Pakaian Adat Minahasa Wanita",
+            "description": "Traditional Minahasa female attire featuring a flowing white or light-colored gown with gold embroidery, paired with a distinctive Minahasa headdress.",
+            "motifs": ["Minahasa geometric embroidery", "Floral gold thread"],
+            "colors": ["White", "Gold", "Red accent"],
+            "accessories": "Minahasa headdress, gold earrings, ornamental fan"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_sulut_pria",
+            "name": "Pakaian Adat Minahasa Pria",
+            "description": "Traditional Minahasa male attire with long shirt and trousers, embroidered jacket, and Minahasa cap.",
+            "motifs": ["Minahasa embroidery", "Simple geometric"],
+            "colors": ["White", "Black", "Gold trim"],
+            "accessories": "Minahasa cap, formal jacket, ornamental sword"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sulawesi_tengah",
+      "name": "Sulawesi Tengah",
+      "description": "Central Sulawesi",
+      "landmark": "Togean Islands",
+      "background_prompt": "remote Togean Islands archipelago with pristine beaches, stilt villages, and dense jungle-clad hills",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_sulteng_wanita",
+            "name": "Pakaian Adat Kaili Wanita",
+            "description": "Traditional Kaili female attire from Central Sulawesi with nggembe blouse and donggala bark-cloth sarong in muted natural tones.",
+            "motifs": ["Bark cloth (fuya) patterns", "Kaili geometric"],
+            "colors": ["Natural brown", "Dark red", "Ochre"],
+            "accessories": "beaded necklaces, arm bracelets, flower headpiece"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_sulteng_pria",
+            "name": "Pakaian Adat Kaili Pria",
+            "description": "Traditional Kaili male attire with loose top, sarong, and headcloth.",
+            "motifs": ["Bark cloth simple", "Tribal minimal"],
+            "colors": ["Dark brown", "Black", "Natural"],
+            "accessories": "headcloth, machete, beaded ornaments"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sulawesi_selatan",
+      "name": "Sulawesi Selatan",
+      "description": "South Sulawesi - Bugis/Makassar",
+      "landmark": "Toraja Highlands",
+      "background_prompt": "dramatic Toraja tongkonan houses with their sweeping boat-shaped roofs amid misty South Sulawesi highlands",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_bodo",
+            "name": "Baju Bodo Bugis",
+            "description": "The ancient Bugis/Makassar traditional female dress. A short, wide, sheer square-cut blouse in shimmering silk, worn over a sarong.",
+            "motifs": ["Plain sheer silk", "Loti woven sarong"],
+            "colors": ["Bright red", "Vibrant orange", "Purple", "Green", "Yellow"],
+            "accessories": "gold crown and hair ornaments, full gold jewelry, lipa sabbe silk sarong"
+          }
+        ],
+        "male": [
+          {
+            "id": "jas_tutu_bugis",
+            "name": "Jas Tutu / Baju Bella Bugis",
+            "description": "Traditional Bugis male formal attire with fitted jacket with golden buttons over a white inner shirt, paired with a silk sarong and passapu headwrap.",
+            "motifs": ["Silk plain", "Lipa sabbe silk weave"],
+            "colors": ["Dark blue", "Black", "Deep purple with gold accents"],
+            "accessories": "passapu headwrap, gold accessories, lipa sabbe silk sarong, keris"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sulawesi_tenggara",
+      "name": "Sulawesi Tenggara",
+      "description": "Southeast Sulawesi",
+      "landmark": "Wakatobi Marine Park",
+      "background_prompt": "crystal clear Wakatobi marine waters with colorful coral reefs visible from above and white sand beach",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_sultra_wanita",
+            "name": "Pakaian Adat Tolaki Wanita",
+            "description": "Traditional Tolaki female attire with woven babu nggawi sarong and colorful blouse.",
+            "motifs": ["Tolaki woven geometric", "Sarafu motif"],
+            "colors": ["Red", "Yellow", "Black"],
+            "accessories": "kalo sara necklace, gold earrings, woven headband"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_sultra_pria",
+            "name": "Pakaian Adat Tolaki Pria",
+            "description": "Traditional Tolaki male attire with loose top, woven sarong, and headcloth.",
+            "motifs": ["Tolaki geometric weave"],
+            "colors": ["Black", "White", "Red accent"],
+            "accessories": "headcloth, kalo sara, traditional sword"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gorontalo",
+      "name": "Gorontalo",
+      "description": "Gorontalo - Veranda of Madinah",
+      "landmark": "Otanaha Fortress",
+      "background_prompt": "historic Otanaha Fortress overlooking Lake Limboto with Gorontalo hills in the background",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_gorontalo_wanita",
+            "name": "Pakaian Adat Gorontalo Wanita",
+            "description": "Traditional Gorontalo female attire featuring elegant biliu top with gold karawo embroidery, paired with matching sarong.",
+            "motifs": ["Karawo needlework embroidery", "Gorontalo floral"],
+            "colors": ["Green", "Gold", "White"],
+            "accessories": "payung juanga crown, gold jewelry, karawo selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_gorontalo_pria",
+            "name": "Pakaian Adat Gorontalo Pria",
+            "description": "Traditional Gorontalo male attire with karawo-embroidered jacket, matching pants, and makuta headpiece.",
+            "motifs": ["Karawo embroidery", "Geometric gold"],
+            "colors": ["White with gold", "Black with gold"],
+            "accessories": "makuta headpiece, karawo sash, formal shoes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sulawesi_barat",
+      "name": "Sulawesi Barat",
+      "description": "West Sulawesi - Mandar",
+      "landmark": "Mandar Coast",
+      "background_prompt": "traditional Mandar sandeq sailing boats on the rich blue Makassar Strait with West Sulawesi mountains behind",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_sulbar_wanita",
+            "name": "Pakaian Adat Mandar Wanita",
+            "description": "Traditional Mandar female attire with distinctive lipaq saqbe silk sarong in rich plaid patterns.",
+            "motifs": ["Lipaq saqbe silk plaid", "Mandar geometric"],
+            "colors": ["Deep red plaid", "Yellow", "Green"],
+            "accessories": "gold hair ornaments, passapu scarf, silk selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_sulbar_pria",
+            "name": "Pakaian Adat Mandar Pria",
+            "description": "Traditional Mandar male attire with simple shirt, lipaq saqbe silk sarong, and passapu headwrap.",
+            "motifs": ["Lipaq saqbe plaid silk"],
+            "colors": ["Dark plaid", "White top"],
+            "accessories": "passapu headwrap, badik dagger, silk sarong"
+          }
+        ]
+      }
+    },
+    {
+      "id": "maluku",
+      "name": "Maluku",
+      "description": "Maluku - Spice Islands",
+      "landmark": "Banda Neira Fort",
+      "background_prompt": "historic Fort Belgica on Banda Neira island with nutmeg trees and volcanic cone of Gunung Api in the distance",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_cele_wanita",
+            "name": "Baju Cele Wanita",
+            "description": "The iconic traditional female dress from Maluku. Features a striking red and white striped baju cele blouse paired with a tapis woven cloth skirt.",
+            "motifs": ["Tenum tapis woven", "Cele stripe pattern", "Flora and fauna"],
+            "colors": ["Red and white stripes", "Gold accents"],
+            "accessories": "konde hair bun with golden pins, sanggul, golden jewelry set"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_cele_pria",
+            "name": "Pakaian Adat Maluku Pria",
+            "description": "Traditional Maluku male ceremonial dress with white shirt, red collar and trim, red cloth wrap at the waist.",
+            "motifs": ["Stripe accent", "Simple tapis weave"],
+            "colors": ["White", "Red", "Gold trim"],
+            "accessories": "topi tiga negeri hat, ceremonial parang salawaku, traditional jewelry"
+          }
+        ]
+      }
+    },
+    {
+      "id": "maluku_utara",
+      "name": "Maluku Utara",
+      "description": "North Maluku - Ternate and Tidore",
+      "landmark": "Ternate Sultanate Palace",
+      "background_prompt": "Ternate Sultanate Kedaton palace with Gamalama volcano towering behind and clove-scented gardens",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_malut_wanita",
+            "name": "Pakaian Adat Ternate Wanita",
+            "description": "Traditional Ternate female attire featuring baju jubbah with gold embroidery and matching songket sarong.",
+            "motifs": ["Ternate royal embroidery", "Gold brocade"],
+            "colors": ["Purple with gold", "Red with gold", "Green with gold"],
+            "accessories": "gold headpiece, elaborate necklace, songket selendang"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_malut_pria",
+            "name": "Pakaian Adat Ternate Pria",
+            "description": "Traditional Ternate male attire with long embroidered coat, matching pants, and distinctive cap.",
+            "motifs": ["Ternate royal geometric", "Gold thread"],
+            "colors": ["White with gold", "Black with gold"],
+            "accessories": "gold cap, ceremonial sword, songket sash"
+          }
+        ]
+      }
+    },
+    {
+      "id": "papua_barat",
+      "name": "Papua Barat",
+      "description": "West Papua - Raja Ampat",
+      "landmark": "Raja Ampat Islands",
+      "background_prompt": "breathtaking Raja Ampat limestone karst islands covered in jungle rising from crystal turquoise waters",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_papua_barat_wanita",
+            "name": "Pakaian Adat Papua Barat Wanita",
+            "description": "Traditional West Papuan female attire with grass skirt, noken bag, beaded necklaces, and body paint.",
+            "motifs": ["Tribal body paint patterns", "Noken woven bag", "Bird of paradise feather"],
+            "colors": ["Natural ochre", "Red", "White body paint"],
+            "accessories": "bird of paradise feather headdress, noken bag, bone and shell necklaces"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_papua_barat_pria",
+            "name": "Pakaian Adat Papua Barat Pria",
+            "description": "Traditional West Papuan male attire with koteka, body paint, and elaborate bird of paradise feather headdress.",
+            "motifs": ["Tribal body paint", "Bird of paradise motifs"],
+            "colors": ["Natural earth tones", "Red ochre", "Black charcoal"],
+            "accessories": "bird of paradise feather crown, bone necklace, bow and arrow, body paint"
+          }
+        ]
+      }
+    },
+    {
+      "id": "papua_barat_daya",
+      "name": "Papua Barat Daya",
+      "description": "Southwest Papua",
+      "landmark": "Triton Bay",
+      "background_prompt": "emerald Triton Bay with limestone cliff walls, hidden lagoons, and traditional Kamoro fishing settlement",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_pabar_daya_wanita",
+            "name": "Pakaian Adat Kamoro Wanita",
+            "description": "Traditional Kamoro female attire with grass skirt, intricate body paint, and jewelry made from natural coastal materials.",
+            "motifs": ["Kamoro carving motifs", "Marine-inspired patterns"],
+            "colors": ["Red ochre", "White", "Natural"],
+            "accessories": "shell and seed necklaces, woven headband, body paint"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_pabar_daya_pria",
+            "name": "Pakaian Adat Kamoro Pria",
+            "description": "Traditional Kamoro male attire with loincloth, elaborate body paint, and carved wooden ornaments.",
+            "motifs": ["Wood carving traditions", "Coastal tribal"],
+            "colors": ["Natural", "Red", "Black"],
+            "accessories": "carved wooden crown, cassowary bone dagger, body paint"
+          }
+        ]
+      }
+    },
+    {
+      "id": "papua",
+      "name": "Papua",
+      "description": "Papua - Land of the Bird of Paradise",
+      "landmark": "Baliem Valley",
+      "background_prompt": "stunning Baliem Valley in Papua highlands with traditional Dani tribe villages and lush green mountains",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_papua_wanita",
+            "name": "Pakaian Adat Dani Wanita",
+            "description": "Traditional Dani female attire from Papua highlands with woven grass skirt, noken string bag, and elaborate bead and shell necklaces.",
+            "motifs": ["Woven grass patterns", "Tribal geometric"],
+            "colors": ["Natural brown", "Ochre", "Shell white"],
+            "accessories": "noken string bag, shell and bead necklaces, pig tusk ornaments"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_papua_pria",
+            "name": "Pakaian Adat Dani Pria",
+            "description": "Traditional Dani male attire from Papua with koteka (gourd), body paint, and elaborate feather headdress.",
+            "motifs": ["Body paint tribal patterns", "Feather arrangements"],
+            "colors": ["Natural", "White body paint", "Red pigment"],
+            "accessories": "feather headdress, boar tusk necklace, stone axe, body paint"
+          }
+        ]
+      }
+    },
+    {
+      "id": "papua_selatan",
+      "name": "Papua Selatan",
+      "description": "South Papua",
+      "landmark": "Asmat Coast",
+      "background_prompt": "mystical Asmat mangrove swamps and jungle riverways in South Papua with traditional Asmat wood carvings",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_papua_selatan_wanita",
+            "name": "Pakaian Adat Asmat Wanita",
+            "description": "Traditional Asmat female attire with grass skirt, intricate body paint, and jewelry from shells, bones, and seeds.",
+            "motifs": ["Asmat wood carving motifs", "Ancestor spirit patterns"],
+            "colors": ["Natural", "Red ochre", "Black charcoal"],
+            "accessories": "shell necklaces, seed jewelry, body paint, woven headband"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_papua_selatan_pria",
+            "name": "Pakaian Adat Asmat Pria",
+            "description": "Traditional Asmat male warrior attire with body paint, cassowary feather headdress, and bone nose ornament.",
+            "motifs": ["Asmat ancestral carvings", "Warrior paint"],
+            "colors": ["Red ochre", "White lime", "Black"],
+            "accessories": "cassowary feather headdress, bone nose ornament, carved shield, spear"
+          }
+        ]
+      }
+    },
+    {
+      "id": "papua_tengah",
+      "name": "Papua Tengah",
+      "description": "Central Papua - Highland Tribes",
+      "landmark": "Carstensz Pyramid (Puncak Jaya)",
+      "background_prompt": "majestic Carstensz Pyramid peak (Puncak Jaya) with glaciers, highland meadows, and misty cloud forest",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_papua_tengah_wanita",
+            "name": "Pakaian Adat Highland Papua Wanita",
+            "description": "Traditional Central Papua highland female attire with woven bilum bag, grass skirt, and elaborate bead necklaces.",
+            "motifs": ["Highland weave patterns", "Tribal geometric"],
+            "colors": ["Earth brown", "Natural fibers", "Bead colors"],
+            "accessories": "bilum bag, shell money necklace, bead ornaments, feather accents"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_papua_tengah_pria",
+            "name": "Pakaian Adat Highland Papua Pria",
+            "description": "Traditional Central Papua highland male attire with elaborate feather headdress, body decorations, and traditional weapons.",
+            "motifs": ["Body decoration patterns", "Feather arrangements"],
+            "colors": ["Natural", "Colorful feathers", "Body paint"],
+            "accessories": "bird of paradise feather crown, pig tusk necklace, stone tools"
+          }
+        ]
+      }
+    },
+    {
+      "id": "papua_pegunungan",
+      "name": "Papua Pegunungan",
+      "description": "Papua Highlands Province",
+      "landmark": "Wamena Valley",
+      "background_prompt": "sweeping Wamena Valley with terraced sweet potato gardens, traditional honai huts, and misty highland mountains",
+      "clothes": {
+        "female": [
+          {
+            "id": "baju_adat_papua_peg_wanita",
+            "name": "Pakaian Adat Lani Wanita",
+            "description": "Traditional Lani tribe female attire with woven fiber skirt, noken bag, and body ornaments from the Papua Highlands.",
+            "motifs": ["Woven fiber patterns", "Highland tribal"],
+            "colors": ["Natural brown", "Ochre", "Red seed beads"],
+            "accessories": "noken bag, bead necklaces, woven bracelet, feather accents"
+          }
+        ],
+        "male": [
+          {
+            "id": "baju_adat_papua_peg_pria",
+            "name": "Pakaian Adat Lani Pria",
+            "description": "Traditional Lani tribe male attire with koteka, fur headband, and elaborate body paint for ceremonies.",
+            "motifs": ["Ceremonial body paint", "Tribal patterns"],
+            "colors": ["Black charcoal paint", "Red ochre", "White clay"],
+            "accessories": "fur and feather headband, bone ornaments, pig tusk necklace"
+          }
+        ]
+      }
+    }
+  ]
+}

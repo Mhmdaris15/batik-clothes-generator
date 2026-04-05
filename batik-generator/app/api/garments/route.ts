@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+
+export const dynamic = "force-dynamic";
+
 import { listAllGarments } from "@/lib/image-store";
 
 /** GET /api/garments — list all previously generated garment images. */

@@ -1,0 +1,84 @@
+{
+  "models": [
+    {
+      "id": "gemini_vto",
+      "name": "Gemini VTO (Virtual Try-On)",
+      "description": "Two-step pipeline: Imagen 4 generates garment, then Virtual Try-On composites with your face photo.",
+      "backend": "gemini",
+      "requires_face": true,
+      "supports_garment_reuse": true,
+      "inputs": [
+        { "key": "face_image", "label": "Face Photo", "type": "image", "required": true },
+        { "key": "region", "label": "Province", "type": "region_select", "required": true },
+        { "key": "gender", "label": "Gender", "type": "gender_select", "required": true },
+        { "key": "outfit", "label": "Outfit", "type": "outfit_select", "required": true },
+        { "key": "num_images", "label": "Number of Results", "type": "number", "min": 1, "max": 4, "default": 1 }
+      ],
+      "parameters": {
+        "aspect_ratio": "3:4",
+        "base_steps": 32
+      }
+    },
+    {
+      "id": "imagen4",
+      "name": "Imagen 4 (Garment Only)",
+      "description": "Generates a photorealistic portrait using Imagen 4 via Vertex AI. No face compositing — AI-generated person wearing traditional outfit.",
+      "backend": "vertex",
+      "requires_face": false,
+      "supports_garment_reuse": false,
+      "inputs": [
+        { "key": "region", "label": "Province", "type": "region_select", "required": true },
+        { "key": "gender", "label": "Gender", "type": "gender_select", "required": true },
+        { "key": "outfit", "label": "Outfit", "type": "outfit_select", "required": true },
+        { "key": "num_images", "label": "Number of Results", "type": "number", "min": 1, "max": 4, "default": 2 },
+        { "key": "aspect_ratio", "label": "Aspect Ratio", "type": "select", "options": ["1:1", "3:4", "4:3", "9:16", "16:9"], "default": "3:4" },
+        { "key": "negative_prompt", "label": "Negative Prompt", "type": "text", "required": false, "placeholder": "blurry, low quality, cartoon..." }
+      ],
+      "parameters": {
+        "person_generation": "allow_adult",
+        "safety_filter": "block_some"
+      }
+    },
+    {
+      "id": "chutes",
+      "name": "Chutes (Custom Endpoint)",
+      "description": "Uses a custom Chutes AI endpoint for face-swapped image generation. Requires a face photo and Chutes API token.",
+      "backend": "chutes",
+      "requires_face": true,
+      "supports_garment_reuse": false,
+      "inputs": [
+        { "key": "face_image", "label": "Face Photo", "type": "image", "required": true },
+        { "key": "region", "label": "Province", "type": "region_select", "required": true },
+        { "key": "gender", "label": "Gender", "type": "gender_select", "required": true },
+        { "key": "outfit", "label": "Outfit", "type": "outfit_select", "required": true },
+        { "key": "num_images", "label": "Number of Results", "type": "number", "min": 1, "max": 4, "default": 1 },
+        { "key": "negative_prompt", "label": "Negative Prompt", "type": "text", "required": false, "placeholder": "deformed, ugly, blurry..." },
+        { "key": "inference_steps", "label": "Inference Steps", "type": "number", "min": 10, "max": 100, "default": 28 },
+        { "key": "cfg_scale", "label": "CFG Scale", "type": "number", "min": 1.0, "max": 15.0, "default": 3.5 }
+      ],
+      "parameters": {
+        "width": 1024,
+        "height": 1024
+      }
+    },
+    {
+      "id": "gemini_flash",
+      "name": "Gemini Flash (Text-to-Image)",
+      "description": "Uses Gemini Flash or Pro image generation models for text-to-image creation. Good for creative variations.",
+      "backend": "default",
+      "requires_face": false,
+      "supports_garment_reuse": false,
+      "inputs": [
+        { "key": "region", "label": "Province", "type": "region_select", "required": true },
+        { "key": "gender", "label": "Gender", "type": "gender_select", "required": true },
+        { "key": "outfit", "label": "Outfit", "type": "outfit_select", "required": true },
+        { "key": "num_images", "label": "Number of Results", "type": "number", "min": 1, "max": 4, "default": 2 },
+        { "key": "custom_prompt", "label": "Custom Prompt Addition", "type": "text", "required": false, "placeholder": "Add extra style instructions..." }
+      ],
+      "parameters": {
+        "temperature": 1,
+        "top_p": 0.95
+      }
+    }
+  ]
+}

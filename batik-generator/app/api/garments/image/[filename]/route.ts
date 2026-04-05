@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import { existsSync, readFileSync } from "node:fs";
-import { garmentFilePath } from "@/lib/image-store";
+import { getGarmentImageBuffer, deleteGarmentImage } from "@/lib/image-store";
 
 /** GET /api/garments/image/[filename] — serve a stored garment image. */
 export async function GET(
@@ -8,13 +7,12 @@ export async function GET(
   { params }: { params: Promise<{ filename: string }> },
 ) {
   const { filename } = await params;
-  const filepath = garmentFilePath(filename);
+  const buffer = await getGarmentImageBuffer(filename);
 
-  if (!existsSync(filepath)) {
+  if (!buffer) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const buffer = readFileSync(filepath);
   const ext = filename.split(".").pop()?.toLowerCase();
   const mime =
     ext === "jpg" || ext === "jpeg"
@@ -23,10 +21,30 @@ export async function GET(
         ? "image/webp"
         : "image/png";
 
-  return new NextResponse(buffer, {
+  return new NextResponse(new Uint8Array(buffer), {
     headers: {
       "Content-Type": mime,
       "Cache-Control": "public, max-age=31536000, immutable",
     },
   });
+}
+
+/** DELETE /api/garments/image/[filename] — delete a stored garment image. */
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Promise<{ filename: string }> },
+) {
+  const { filename } = await params;
+  try {
+    const deleted = await deleteGarmentImage(filename);
+    if (!deleted) {
+      return NextResponse.json({ error: "Not found" }, { status: 404 });
+    }
+    return NextResponse.json({ deleted: true, filename });
+  } catch (error) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to delete garment" },
+      { status: 500 },
+    );
+  }
 }
